@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account Controller!
+{% endblock %}
+
+{% block body %}
+	<h1 class="h3 mb-3 font-weight-normal">Profil</h1>
+
+	{% if app.user %}
+
+		<div class="mb-3">
+			You are logged in as
+			{{ app.user.userIdentifier }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+
+		<div {{ react_component('Account', {user: app.user|serialize(format = 'json')}) }}>
+			Loading...
+			<i class="fas fa-cog fa-spin fa-3x"></i>
+		</div>
+		<div class="js-user" data-is-authenticated="{{ app.user ? 'true' : 'false' }}" data-user="{{ app.user|serialize(format = 'json') }}"></div>
+	{% endif %}
+{% endblock %}

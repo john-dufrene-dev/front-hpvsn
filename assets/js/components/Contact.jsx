@@ -5,6 +5,7 @@ const message = new MessageApiClient();
 
 export default function Contact(props) {
     const [email, setEmail] = useState('');
+    const [alert, setAlert] = useState({ status: false, class: '' });
     const user = JSON.parse(props.user);
     const company_url = `/api/companies/${process.env.X_AUTH_IDENTIFIER}`;
 
@@ -32,14 +33,23 @@ export default function Contact(props) {
 
         message.sendMessage(object)
             .then((response) => {
-                console.log(response)
+                if (response.status === 201) {
+                    setAlert({ status: true, alert: 'alert alert-success' })
+                } else {
+                    setAlert({ status: true, alert: 'alert alert-danger' })
+                }
             })
     }
 
     return (
         <>
+            {alert.status &&
+                <div className={alert.alert} role="alert">
+                    This is a primary alert—check it out!
+                </div>
+            }
             <form onSubmit={formSubmit}>
-                <input type="email" id="email" name="email" defaultValue={email} placeholder="Email" />
+                <input type="text" id="email" name="email" defaultValue={email} placeholder="Email" />
                 <input type="hidden" id="company" name="company" defaultValue={company_url} placeholder="Email" />
                 <input type="text" id="subject" name="subject" placeholder="Subject" defaultValue="testerrrrrrrrrr" />
                 <input type="text" id="content" name="content" placeholder="content" defaultValue="testjhgfdsfghjk" />

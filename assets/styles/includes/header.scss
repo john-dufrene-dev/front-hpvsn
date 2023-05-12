@@ -1,0 +1,285 @@
+header {
+    background:#439eb3;
+}
+
+/* NAVBAR */
+.navbar {
+    position: relative;
+    transition: 750ms ease;
+    padding: 0px;
+    font-size: 20px;
+    background: #096575;
+    height: 43px;
+    .container-fluid {
+        // background: #096575;
+        .navbar-toggler {
+            position: absolute;
+            top: 163px;
+            left: 14px;
+            border: 0px;
+            .navbar-toggler-icon {
+                width: 31px;
+                height: 27px;
+                background:url(/build/img/bigmac.png) no-repeat center;
+            }
+        }
+        /* LOGO */
+        .logo-happyvoisin-interne {
+            top: 0px;
+            left: 15px;
+            width: 60px;
+            height: auto;
+        }
+        .navbar-left {
+        }
+        .navbar-nav {
+            flex-direction: row;
+            align-items: baseline;
+            line-height: 43px;
+            &.ml-auto {
+                margin: auto !important;
+            }
+        }
+        a {
+            font-size: 11px;
+            vertical-align: middle;
+            font-family: "Poppins-semiBold";
+        }
+        .nav-item {
+            .spontsorship-navbar {
+                padding: 4px 16px;
+                color: #fff;
+                background: #096575;
+            }
+            .services-navbar {
+                padding: 0px 10px;
+                line-height: 18px;
+                color: #0ea3c1;
+                background: white;
+            }
+            .nav-link {
+                color: white;
+                padding: 0px 13px;
+                line-height: 20px;
+                height: 20px;
+            }
+            &.nav-item-inscription {
+                width: auto;
+                .btn-inscription {
+                    color:#fff;
+                    font-family: "Junior";
+                    font-size: 20px;
+                    position: relative;
+                    display: inline-block;
+                    height: 43px;
+                    line-height: 43px;
+                    width: 29px;
+                    margin: 0px;
+                    top: 0px;
+                    padding: 0px;
+                    text-indent: -10000em;
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        background:url(/build/img/account-inscription.png) no-repeat bottom center;
+                        background-size: contain;
+                        width: 29px;
+                        height: 29px;
+                        left: 0px;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+@media (max-width:991px) {
+    .navbar .container-fluid #main_nav .navbar-nav {
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
+@media (min-width:992px) {
+    .navbar {
+        //position: fixed;
+        background:#10a2be;
+        height: 74px;
+        &.scrolled {
+            background: #096575;
+            .container-fluid {
+                background: none;
+                padding: 9px 0px 0px 0px;
+                .nav-item {
+                    &.nav-item-inscription {
+                        .btn-inscription {
+                            height: 74px;
+                            line-height: 84px;
+                        }
+                    }
+                    .nav-link {
+                        padding: 0px 10px;
+                    }
+                }
+                .navbar-left {
+                    margin-top: -9px;
+                }
+            }
+        }
+        .container-fluid {
+            padding: 9px 0px 0px;
+            /* LOGO */
+            .logo-happyvoisin-interne {
+                top: 0px;
+                left: 55px;
+                width: 149px;
+                height: auto;
+            }
+            .navbar-collapse {
+                margin-left: 18% !important;    
+                .navbar-left {
+                    margin-top: -9px;
+                    padding-left: 10px;
+                }
+            }
+            .navbar-nav {
+                line-height: initial;
+                &.ml-auto {
+                    margin-left: auto !important;
+                }
+            }
+            a {
+                font-size: 14px;
+                line-height: 16px;
+                vertical-align: middle;
+            }
+            .nav-item {
+                .spontsorship-navbar {
+                }
+                .services-navbar {
+                    line-height: 16px;
+                    padding: 4px 16px;
+                }
+                .nav-link {
+                    padding: 4px 22px;
+                    line-height: 26px;
+                    height: auto;
+                }
+                &.nav-item-inscription {
+                    margin-top: 0px;
+                    width: auto;
+                    .btn-inscription {
+                        border-radius: 50rem 0px 0px 50rem;
+                        background-color: #096575;
+                        border-color: #096575;
+                        position: relative;
+                        display: inline-block;
+                        text-indent: unset;
+                        width: auto;
+                        height: 74px;
+                        line-height: 84px;
+                        margin-top: -10px;
+                        padding-top: 4px;
+                        padding-left: 30px;
+                        padding-right: 80px;
+                        box-shadow: -6px 6px 10px 1px rgba(0, 0, 0, 0.1);
+                            &:after {
+                                display: inline-block;
+                                margin-left: 0px;
+                                right: 25px;
+                                top: 7px;
+                                width: 42px;
+                                height: 31px;
+                                margin-left: 20px;
+                                right: 19px;
+                                top: 29px;
+                                left: unset;
+                            }
+                    }
+                }
+            }
+            
+        }
+    }
+    &.scrolled {
+        background: #096575;
+    }
+}
+@media (min-width:1200px) {
+    .navbar {
+        &.scrolled {
+        }
+        .container-fluid {
+            padding: 0px 0px 0px;
+            .navbar-left {
+                margin-top: 0px;
+            }
+            .navbar-nav {
+                &.ml-auto {
+                }
+            }
+            a {
+                line-height: 26px;
+            }
+            .nav-item {
+                .spontsorship-navbar {
+                }
+                .services-navbar {
+                    line-height: 26px;
+                }
+                .nav-link {
+                }
+                &.nav-item-inscription {
+                    .btn-inscription {
+                        height: 84px;
+                        line-height: 84px;
+                            &:after {
+                                height: 41px;
+                                top: 23px;
+                            }
+                    }
+                }
+            }
+            
+        }
+    }
+    &.scrolled {
+        background: #096575;
+    }
+}
+@media (min-width:1522px) {
+    .navbar {
+        .container-fluid {
+            /* LOGO */
+            .logo-happyvoisin-interne {
+                top: 0px;
+                left: 105px;
+            }
+            .navbar-left {
+                padding-left: 0px;
+            }
+            a {
+                font-size: 20px;
+            }
+            .nav-item {
+                .spontsorship-navbar {
+                    padding: 4px 26px;
+                }
+                .services-navbar {
+                    padding: 4px 26px;
+                }
+                &.nav-item-inscription {
+                    .btn-inscription {
+                        font-size: 25px;
+                        padding-left: 40px;
+                        padding-right: 96px;
+                        &:after {
+                            right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

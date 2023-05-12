@@ -3,6 +3,7 @@ export class ApiClient {
         this.baseUrl = baseUrl || process.env.ADMIN_URL || '';
         this.contentType = 'application/ld+json';
         this.defaultHeaders = options?.defaultHeaders || {
+            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': this.contentType,
             'X-AUTH-TOKEN': `${process.env.X_AUTH_TOKEN || ''}`,
             'X-AUTH-IDENTIFIER': `${process.env.X_AUTH_IDENTIFIER || ''}`,
@@ -42,6 +43,8 @@ export class ApiClient {
             method,
             headers: { ...this.defaultHeaders, ...headers },
         };
+
+        // requestOptions.mode = 'cors';
 
         if (body) {
             requestOptions.body = JSON.stringify(body);

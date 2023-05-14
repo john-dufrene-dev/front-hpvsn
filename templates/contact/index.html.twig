@@ -5,13 +5,19 @@
 
 {% block body %}
 	{% include 'includes/header.html.twig' %}
+	<div class="container internalContainer p-0">
+        <h1 class="internalTitle">
+            Contact
+        </h1>
 
-	<h1 class="h3 mb-3 font-weight-normal">Nous contacter</h1>
-
-	<div {{ react_component('Contact', {user: app.user|serialize(format = 'json')} ) }}>
-		Loading...
-		<i class="fas fa-cog fa-spin fa-3x"></i>
+		<div {{ react_component('Contact', {user: app.user|serialize(format = 'json')} ) }}>
+			Loading...
+			<i class="fas fa-cog fa-spin fa-3x"></i>
+		</div>
 	</div>
+
+
+	{% include 'includes/footer.html.twig' %}
 {% endblock %}
 
 {% block stylesheets %}

@@ -1,5 +1,12 @@
 @import "includes/header.scss";
 
+// import bootstrap scss
+//@import "front/config/bootstrap.scss";
+
+@import "front/fonts.scss";
+
+@import "front/custom-global.scss";
+
 body {
     background-color: lightgray;
 }

@@ -28,6 +28,8 @@ Encore
     .addEntry('@app', './assets/app.ts')
     .addEntry('@auth', './assets/js/auth.ts')
     .addEntry('@contact', './assets/js/contact.ts')
+    .addEntry('@home', './assets/js/home.ts')
+    .addEntry('@ads', './assets/js/ads.ts')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
@@ -47,17 +49,12 @@ Encore
         }),
     )
 
+    // Set the path the files are copied to
     .copyFiles({
         from: './assets/img',
-
-        // optional target path, relative to the output dir
-        //to: 'images/[path][name].[ext]',
-
-        // if versioning is enabled, add the file hash too
-        to: 'img/[path][name].[ext]',
-
-        // only copy files matching this pattern
-        //pattern: /\.(png|jpg|jpeg)$/
+        pattern: /\.(png|jpg|jpeg|webp|gif)$/,
+        // to path is relative to the build directory
+        to: 'img/[path][name].[ext]'
     })
     
     /*

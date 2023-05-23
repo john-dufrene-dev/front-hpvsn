@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdsDetalsController!{% endblock %}
+
+{% block body %}
+	{% include 'includes/header.html.twig' %}
+    <div>
+        <header class="header-top position-relative h-auto">
+
+            {# <img class="logo-happyvoisin d-block mx-auto mb-4 position-absolute" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/build/img/logo-interne.png" alt="logo happy voisin" width="149" height="169"> #}
+
+            <div class="bloc-title-home position-absolute text-center">
+                <div class="title-home"> Les <br class="d-sm-none">demandes</div>
+                
+				<form id="formRejoindre" class="form-rejoindre">
+					{# BARRE DE RECHERCHE #}
+                    <div class="input-group mb-3 d-flex search-box">
+						<details id="dropdown" class="dropdown">
+							<summary class="dropdown-button">
+								<span id="selected-item" class="selected-item">Catégories</span>
+							</summary>
+							<details-menu class="dropdown-menu d-block">
+								<div class="dropdown-menu-header">Sélection catégorie</div>
+								<div class="dropdown-menu-list">
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Catégories" checked>
+									<span>Catégories</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Objet">
+									<span>Objet</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Électroménager">
+									<span>Électroménager</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Jardinage">
+									<span>Jardinage</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Outillage">
+									<span>Outillage</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Services">
+									<span>Services</span>
+								</label>
+								</div>
+							</details-menu>
+							</details>
+                        <input type="search" name="search" id="search_form" class="form-control rounded-pill border-0 input-search-home search-form-input" placeholder="Que recherchez-vous ?"  aria-label="Search" aria-describedby="search-addon">
+                        <div class="input-group-append position-absolute">
+                            <button class="rounded-pill px-3 btn btn-sm" type="submit" id="submit_form">Je recherche</button>
+                        </div>
+                    </div>
+					<span class="link-post-announces m-auto"><a href="#" class="d-inline-block">Je poste moi aussi une annonce</a></span>
+                </form>
+            </div>
+
+            {# <div class="smartphone position-absolute" data-aos="example-anim1">
+                <img class="fond-header d-block mx-auto img-fluid" src="/build/img/tel-header.png" alt="smartphone happy voisin" width="366" height="571">
+            </div> #}
+            
+            <div class="femme-fauteuil position-absolute" data-aos="fade-up">
+                <img class="d-block mx-auto img-fluid" src="/build/img/femme-canape.png" alt="femme assise dans son fauteuil avec son ordi" width="231" height="304">
+            </div>
+            
+            {# <div class="masque-header position-absolute d-flex"></div> #}
+
+            <img class="fond-header d-block mx-auto img-fluid" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"  src="/build/img/fond-header-annonces.jpg" alt="ville happy voisin" width="1920" height="494">
+        </header>
+	</div>
+
+    {# CONTENU #}
+	<div class="container p-0">
+        <div class="ariane">Les demandes > Services > Objet > Electroménager > Cuisine</div>
+        <div class="row no-gutters m-auto d-flex">
+            <div class="col-12 col-lg-7 col-xl-9 left-detail">
+                <h2 class="detail-title">Cherche appareil à raclette</h2>
+                {# {{ dump(announcement) }} Tu fais announcement.id ou announcement.title tu as toutes les infos possible sur une page d'une annonce  #}
+                <div class="detail-top">
+                    <div>Aujourd'hui à 19:00</div>
+                    <div>10€ <span class="badge badge-secondary bg-orange">Location</span></div>
+                </div>
+                <div class="detail-thumbs">
+                    <div><img src="/build/img/detail-1.jpg" alt="" width="269" height="200"></div>
+                    <div><img src="/build/img/detail-2.jpg" alt="" width="269" height="200"></div>
+                    <div><img src="/build/img/detail-3.jpg" alt="" width="269" height="200"></div>
+                    <button type="button" class="btn btn-light">Afficher toutes les photos ></button>
+                </div>
+                <div class="detail-description">
+                    <p>Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                </div>
+                <div class="detail-categories">
+                    <a href="#" title="Objet">Objet</a> <a href="#" title="Électroménager">Électroménager</a>
+                </div>
+                <h3 class="detail-title-smaller">Où suis-je ? par ici !</h3>
+                <div id="map"></div>
+                <h3 class="detail-title-smaller">Cela peut t'intéresser aussi</h3>
+				<div id="listing-announcements"></div>
+                <a href="#" title="Poste ton annonce" class="rounded-pill px-3 btn btn-sm bg-orange text-white post-annoucement">Poste ton annonce</a>
+            </div>
+            <div class="col-12 col-lg-5 col-xl-3 right-detail">
+                <div class="floater">
+                    <div class="name">Sarah</div>
+                    <div class="place">Saint-Philippe - Biot</div>
+                    <a href="#" title="Tous les services" class="rounded-pill px-3 btn btn-sm bg-white ask-question">Une question ? Demande lui</a>
+                    <a href="#" title="Tous les services" class="rounded-pill px-3 btn btn-sm bg-orange text-white proposition">Fais lui une proposition</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@ads') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@ads') }}
+{% endblock %}

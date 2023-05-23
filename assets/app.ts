@@ -18,5 +18,6 @@ import 'aos/dist/aos.js'
 
 AOS.init({
     easing: 'ease-out-back',
-    duration: 1000
+    duration: 10000
 });
+

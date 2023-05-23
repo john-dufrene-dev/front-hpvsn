@@ -1,12 +1,18 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  aos:
+    specifier: 3.0.0-beta.6
+    version: 3.0.0-beta.6
   axios:
     specifier: ^1.4.0
     version: 1.4.0
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
+  file-loader:
+    specifier: ^6.2.0
+    version: 6.2.0(webpack@5.81.0)
   prop-types:
     specifier: ^15.8.1
     version: 15.8.1
@@ -47,7 +53,7 @@ devDependencies:
     version: file:vendor/symfony/ux-react/assets(@hotwired/stimulus@3.2.1)(react-dom@18.2.0)(react@18.2.0)
   '@symfony/webpack-encore':
     specifier: ^4.3.0
-    version: 4.3.0(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(@babel/preset-react@7.18.6)(@symfony/stimulus-bridge@3.2.2)(postcss@8.4.23)(sass-loader@13.2.2)(sass@1.62.1)(ts-loader@9.4.2)(typescript@5.0.4)(webpack-cli@4.10.0)(webpack-notifier@1.15.0)(webpack@5.81.0)
+    version: 4.3.0(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(@babel/preset-react@7.18.6)(@symfony/stimulus-bridge@3.2.2)(file-loader@6.2.0)(postcss@8.4.23)(sass-loader@13.2.2)(sass@1.62.1)(ts-loader@9.4.2)(typescript@5.0.4)(webpack-cli@4.10.0)(webpack-notifier@1.15.0)(webpack@5.81.0)
   core-js:
     specifier: ^3.30.1
     version: 3.30.1
@@ -1394,7 +1400,7 @@ packages:
       schema-utils: 3.1.2
     dev: true
 
-  /@symfony/webpack-encore@4.3.0(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(@babel/preset-react@7.18.6)(@symfony/stimulus-bridge@3.2.2)(postcss@8.4.23)(sass-loader@13.2.2)(sass@1.62.1)(ts-loader@9.4.2)(typescript@5.0.4)(webpack-cli@4.10.0)(webpack-notifier@1.15.0)(webpack@5.81.0):
+  /@symfony/webpack-encore@4.3.0(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(@babel/preset-react@7.18.6)(@symfony/stimulus-bridge@3.2.2)(file-loader@6.2.0)(postcss@8.4.23)(sass-loader@13.2.2)(sass@1.62.1)(ts-loader@9.4.2)(typescript@5.0.4)(webpack-cli@4.10.0)(webpack-notifier@1.15.0)(webpack@5.81.0):
     resolution: {integrity: sha512-YhM6xh+aKmrWS7X7Y2CUDte4wiUm9WIo0w07KTwDLLQnOUdMHRf3wa680WXH/I3oHqD+grFa7BHPpR0sfmoGMQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -1498,6 +1504,7 @@ packages:
       css-loader: 6.7.3(webpack@5.81.0)
       css-minimizer-webpack-plugin: 4.2.2(webpack@5.81.0)
       fast-levenshtein: 3.0.0
+      file-loader: 6.2.0(webpack@5.81.0)
       mini-css-extract-plugin: 2.7.5(webpack@5.81.0)
       pkg-up: 3.1.0
       postcss: 8.4.23
@@ -1930,6 +1937,14 @@ packages:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
+  /aos@3.0.0-beta.6:
+    resolution: {integrity: sha512-VLWrpq8bfAWcetynVHMMrqdC+89Qq/Ym6UBJbHB4crIwp3RR8uq1dNGgsFzoDl03S43rlVMK+na3r5+oUCZsYw==}
+    dependencies:
+      classlist-polyfill: 1.2.0
+      lodash.debounce: 4.0.8
+      lodash.throttle: 4.1.1
+    dev: false
+
   /array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
     dev: true
@@ -2037,7 +2052,6 @@ packages:
 
   /big.js@5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
-    dev: true
 
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -2174,6 +2188,10 @@ packages:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
     dev: true
+
+  /classlist-polyfill@1.2.0:
+    resolution: {integrity: sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==}
+    dev: false
 
   /clean-webpack-plugin@4.0.0(webpack@5.81.0):
     resolution: {integrity: sha512-WuWE1nyTNAyW5T7oNyys2EN0cfP2fdRxhxnIQWiAp0bMabPdHhoGxM8A6YL2GhqwgrPnnaemVE7nv5XJ2Fhh2w==}
@@ -2610,7 +2628,6 @@ packages:
   /emojis-list@3.0.0:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
     engines: {node: '>= 4'}
-    dev: true
 
   /encodeurl@1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
@@ -2775,6 +2792,16 @@ packages:
     dependencies:
       websocket-driver: 0.7.4
     dev: true
+
+  /file-loader@6.2.0(webpack@5.81.0):
+    resolution: {integrity: sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.1.2
+      webpack: 5.81.0(webpack-cli@4.10.0)
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -3245,7 +3272,6 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: true
 
   /kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -3278,7 +3304,6 @@ packages:
       big.js: 5.2.2
       emojis-list: 3.0.0
       json5: 2.2.3
-    dev: true
 
   /locate-path@3.0.0:
     resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
@@ -3296,11 +3321,14 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
 
   /lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
     dev: true
+
+  /lodash.throttle@4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+    dev: false
 
   /lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}

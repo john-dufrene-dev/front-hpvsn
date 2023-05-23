@@ -21,10 +21,12 @@ export default function Contact(props) {
         let formObject = Object.fromEntries(data.entries());
 
         const object = {
+            name: formObject.name,
             email: formObject.email,
+            tel: formObject.tel,
             company: company_url,
             subject: formObject.subject,
-            content: formObject.content,
+            demande: formObject.demande,
             template: formObject.template,
             extras: [],
             files: [],
@@ -48,14 +50,28 @@ export default function Contact(props) {
                     This is a primary alert—check it out!
                 </div>
             }
+            <div class="container-form">
             <form onSubmit={formSubmit}>
-                <input type="text" id="email" name="email" defaultValue={email} placeholder="Email" />
-                <input type="hidden" id="company" name="company" defaultValue={company_url} placeholder="Email" />
-                <input type="text" id="subject" name="subject" placeholder="Subject" defaultValue="testerrrrrrrrrr" />
-                <input type="text" id="content" name="content" placeholder="content" defaultValue="testjhgfdsfghjk" />
-                <input type="hidden" id="template" name="template" defaultValue="contact_form" placeholder="Email" />
-                <input type="submit" />
+                <div class="form-group">
+                <input type="text" id="name" name="name" class="form-control" defaultValue={name} placeholder="Nom et prénom" />
+                </div>
+                <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" defaultValue={email} placeholder="Email" />
+                </div>
+                <div class="form-group">
+                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Téléphone" />
+                </div>
+                <div class="form-group">
+                <textarea class="form-control" id="demande" name="demande" placeholder="Ta demande"></textarea>
+                </div>
+                <div class="form-group">
+                </div>
+                <input type="hidden" id="company" name="company" defaultValue={company_url} />
+                <input type="hidden" id="template" name="template" defaultValue="contact_form" />
+                <input type="hidden" id="subject" name="subject" defaultValue="Formulaire de contact Happy Voisin" />
+                <button type="submit" class="btn btn-primary">Valider mon profil</button>
             </form>
+            </div>
         </>
     );
 }

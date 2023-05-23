@@ -1,0 +1,214 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdsController!{% endblock %}
+
+{% block body %}
+	{% include 'includes/header.html.twig' %}
+
+    <div>
+        <header class="header-top position-relative h-auto">
+
+            {# <img class="logo-happyvoisin d-block mx-auto mb-4 position-absolute" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/build/img/logo-interne.png" alt="logo happy voisin" width="149" height="169"> #}
+
+            <div class="bloc-title-home position-absolute text-center">
+                <div class="title-home"> Les <br class="d-sm-none">demandes</div>
+                
+				<form id="form_submit_search" class="form-rejoindre">
+					{# BARRE DE RECHERCHE #}
+                    <div class="input-group mb-3 d-flex search-box">
+						<details id="dropdown" class="dropdown">
+							<summary class="dropdown-button">
+								<span id="selected-item" class="selected-item">Catégories</span>
+							</summary>
+							<details-menu class="dropdown-menu d-block">
+								<div class="dropdown-menu-header">Sélection catégorie</div>
+								<div class="dropdown-menu-list">
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Catégories" checked>
+									<span>Catégories</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Objet">
+									<span>Objet</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Électroménager">
+									<span>Électroménager</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Jardinage">
+									<span>Jardinage</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Outillage">
+									<span>Outillage</span>
+								</label>
+								<label class="dropdown-menu-item">
+									<input type="radio" name="item" value="Services">
+									<span>Services</span>
+								</label>
+								</div>
+							</details-menu>
+							</details>
+                        <input type="search" name="search" id="search_form" class="form-control rounded-pill border-0 input-search-home search-form-input" placeholder="Que recherchez-vous ?"  aria-label="Search" aria-describedby="search-addon">
+                        <div class="input-group-append position-absolute">
+                            <button class="rounded-pill px-3 btn btn-sm" type="submit" id="submit_form">Je recherche</button>
+                        </div>
+                    </div>
+					<span class="link-post-announces m-auto"><a href="#" class="d-inline-block">Je poste moi aussi une annonce</a></span>
+                </form>
+            </div>
+
+            {# <div class="smartphone position-absolute" data-aos="example-anim1">
+                <img class="fond-header d-block mx-auto img-fluid" src="/build/img/tel-header.png" alt="smartphone happy voisin" width="366" height="571">
+            </div> #}
+            
+            <div class="femme-fauteuil position-absolute" data-aos="fade-up">
+                <img class="d-block mx-auto img-fluid" src="/build/img/femme-canape.png" alt="femme assise dans son fauteuil avec son ordi" width="231" height="304">
+            </div>
+            
+            {# <div class="masque-header position-absolute d-flex"></div> #}
+
+            <img class="fond-header d-block mx-auto img-fluid" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"  src="/build/img/fond-header-annonces.jpg" alt="ville happy voisin" width="1920" height="494">
+        </header>
+	</div>
+
+	<div class="container-fluid p-0">
+		<form method="post" action="" id="listing_form">
+
+			{# HEAD LIST ANNOUNCE #}
+			<div class="d-flex flex-row justify-content-center align-items-top head-list-announce">
+				<h2 id="count_number_announcements" data-count-announcements="0" class="title-list-announce"></h2>
+				<div class="btn-group tri-announce" role="group" aria-label="Tri annonces">
+					<button id="menuDeroulant" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tri : Plus récentes</button>
+
+					<div class="dropdown-menu" aria-labelledby="menuDeroulant">
+						<a class="dropdown-item" href="#">Lien n°1</a>
+						<a class="dropdown-item" href="#">Lien n°2</a>
+						<a class="dropdown-item" href="#">Lien n°3</a>
+					</div>
+				</div>
+				<a class="delete-filter p-2" id="clear_filter">x Effacer les filtres</a>
+			</div>
+
+			{# BAN ANNOUNCE FILTER #}
+			<div class="d-flex flex-row justify-content-center align-items-end ban-announce-filter">
+				{# Tout #}
+				<div class="form-group p-2">
+					<div class="d-flex flex-row justify-content-center" aria-label="Choix type">
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="checkbox" checked autocomplete="off"> Tout
+							</label>
+						</div>
+					</div>
+				</div>
+				{# Catégories #}
+				<div class="form-group p-2">
+					<label for="selection">Catégories</label>
+					<select id="selection" class="form-control">
+						<option value="">Choisir une catégorie</option>
+						<optgroup label="Groupe d'options 1">
+						<option value="">Option 1</option>
+						<option value="">Option 2</option>
+						<option value="">Option 3</option>
+						</optgroup>
+						<optgroup label="Groupe d'options 2">
+						<option value="">Option 4</option>
+						<option value="">Option 5</option>
+						</optgroup>
+					</select>
+				</div>
+				{# Type #}
+				<div class="form-group p-2">
+					<label for="nom">Type</label>
+					<div class="d-flex flex-row justify-content-center" aria-label="Choix type">
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="object" id="type_object"> Objet
+							</label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="service" id="type_service"> Service
+							</label>
+						</div>
+					</div>
+				</div>
+				{# Objet en : #}
+				<div class="form-group p-2">
+					<label for="nom">Objet en : </label>
+					<div class="d-flex flex-row justify-content-center" aria-label="Type d'annonce">
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="pret" id="object_pret"> Prêt
+							</label>
+						</div>
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="vente" id="object_vente"> Vente
+							</label>
+						</div>
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="location" id="object_location"> Location
+							</label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="don" id="object_don"> Don
+							</label>
+						</div>
+					</div>
+				</div>
+				{# Service : #}
+				<div class="form-group p-2">
+					<label for="nom">Service : </label>
+					<div class="d-flex flex-row justify-content-center" aria-label="Type de service">
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="benevolat" id="service_benevolat"> Bénévolat
+							</label>
+						</div>
+						<div class="btn-group-toggle mr-2" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="remunere" id="service_remunere"> Rémunéré
+							</label>
+						</div>
+						<div class="btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input type="checkbox" autocomplete="off" value="devis" id="service_devis"> Sur devis
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		{# LISTE ANNONCES ET MAP #}
+		<div class="container-fluid">
+			<div id="announcements-spinner" class="spinner-border text-success"></div>
+			<div class="row">
+				<div id="listing-announcements" class="col-lg"></div>
+				<div class="col-lg">
+					<div id="map"></div>
+				</div>
+			</div>
+			<div data-paginator-announcements="1" id="paginator-announcements"></div>
+			<div data-latitude-announcements="{#{app.user.datas.latitude}#}" data-longitude-announcements="{#{app.user.datas.longitude}#}" id="coords-announcements"></div>
+		</div>
+
+	</div>
+
+    {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@ads') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@ads') }}
+{% endblock %}

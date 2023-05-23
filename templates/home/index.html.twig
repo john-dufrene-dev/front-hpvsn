@@ -143,66 +143,16 @@
                 Happy Voisin est le 1er réseau social à te faire gagner de l'argent. Rejoins ton quartier et tes supers voisins. Tu paies un abonnement mensuel sans engagement, et ensuite tout est inclus ! Il n'y a pas de service payant. Propose tes services et demande de l'aide quand tu en as besoin. Un service de chat en ligne permet aussi de papoter et échanger avec tes voisins. Et parce qu'on est généreux chez Happy Voisin, tu peux parrainer tes voisins et tes amis, et ainsi gagner chaque mois de l’argent ! Tu veux être happy toi aussi ? Rejoins la communauté Happy Voisin :)
             </div>
         </div>
-        <div class="container-fluid footer">
-            <footer>
-                <div class="papote">
-                    Papote avec<br>tes voisins
-                    <img src="/build/img/papote.png" width="118" height="102" alt="bulle papote avec tes voisins">
-                </div>
-                <div class="row d-block d-lg-none menuFooter">
-                    <div class="col-12 col-md footerLinks accordion" id="accordionFooter">
-                        <h5 class="titleMenuFooter collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">Happy Voisin</h5>
-                        <ul id="collapse2" class="list-unstyled text-small collapse" data-parent="#accordionFooter">
-                        <li><a href="#">Écris-nous</a></li>
-                        <li><a href="#">Mon compte</a></li>
-                        <li><a href="#">facebook</a></li>
-                        <li><a href="#">Comment ça marche ?</a></li>
-                        <li><a href="#">Parrainage</a></li>
-                        <li><a href="#">Les services</a></li>
-                        <li><a href="#">CGV</a></li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Confidentialité</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row d-none d-lg-flex">
-                    <div class="col-12 col-md footerLinks">
-                        <h5>Contact</h5>
-                        <ul class="list-unstyled text-small">
-                        <li><a href="#">Écris-nous</a></li>
-                        <li><a href="#">Mon compte</a></li>
-                        <li><a href="#">facebook</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md footerLinks">
-                        <h5>S'informer</h5>
-                        <ul class="list-unstyled text-small">
-                        <li><a href="#">Comment ça marche ?</a></li>
-                        <li><a href="#">Parrainage</a></li>
-                        <li><a href="#">Les services</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md footerLinks">
-                        <h5>Infos légales</h5>
-                        <ul class="list-unstyled text-small">
-                        <li><a href="#">CGV</a></li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Confidentialité</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="copyright">©Happy-voisin.fr - 2020</div>
-            </footer>
-        </div>
     </div> 
-
-
-	<h1 class="h3 mb-3 font-weight-normal">Home</h1>
-	<div class="mb-3">
-		<a href="{{ path('app_login') }}">Login</a>
-	</div>
-	<div class="mb-3">
-		<a href="{{ path('app_register') }}">Register</a>
-	</div>
 	{% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@home') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@home') }}
 {% endblock %}

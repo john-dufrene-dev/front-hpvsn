@@ -4,6 +4,199 @@
 {% endblock %}
 
 {% block body %}
+	{% include 'includes/headerhome.html.twig' %}
+
+	<div>
+        <header class="header-top position-relative">
+
+            <img class="logo-happyvoisin d-block mx-auto mb-4 position-absolute" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/build/img/logo-happyvoisin.png" alt="logo happy voisin" width="285" height="281">
+            
+            <div class="cartouche-essai position-absolute h-auto">
+                <a href="#" title="Je me lance !" class="rounded-pill px-3 btn btn-sm btn-orange w-100 h-100">Démarre ton essai gratuit de 7 jours</a>
+                <span class="sans-engagement position-absolute">Sans engagement, tu peux annuler à tout moment</span>
+            </div>
+
+            <div class="bloc-title-home position-absolute text-center">
+                <div class="title-home"> Rejoins <br class="d-sm-none">tes voisins !</div>
+                <h1 class="baseline-home">Le 1er réseau social entre voisins <span class="d-lg-none"><br></span>qui te fait gagner de l’argent</h1>
+                <form id="formRejoindre" class="form-rejoindre">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-pill border-0 input-search-home" placeholder="Mon adresse postale" aria-label="Autre input type texte avec bouton" aria-describedby="texte-bouton">
+                        <div class="input-group-append position-absolute">
+                            <button class="rounded-pill px-3 btn btn-sm" type="button" id="texte-bouton">Rejoindre mon quartier</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="smartphone position-absolute" data-aos="example-anim1">
+                <img class="fond-header d-block mx-auto img-fluid" src="/build/img/tel-header.png" alt="smartphone happy voisin" width="366" height="571">
+            </div>
+            
+            <div class="voisines position-absolute" data-aos="fade-up">
+                <div class="bulle-voisines">
+                    <img class="d-block mx-auto img-fluid" src="/build/img/bulles-voisines.png" alt="conversation voisines" width="349" height="305">
+                </div>
+            </div>
+            
+            <div class="masque-header position-absolute d-flex"></div>
+
+            <img class="fond-header d-block mx-auto img-fluid" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"  src="/build/img/fond-header.jpg" alt="ville happy voisin" width="1920" height="893">
+        </header>
+
+        <div id="carouselHow" class="container how-it-work carousel slide carousel-slide" data-ride="carousel" data-interval="false">
+            <h2 class="text-center"> Comment <br class="d-md-none">ça marche ?</h2>
+            <!-- Indicateurs -->
+            <ul class="carousel-indicators">
+                <li data-target="#carouselHow" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselHow" data-slide-to="1"></li>
+                <li data-target="#carouselHow" data-slide-to="2"></li>
+            </ul>
+
+            <!-- Carrousel -->
+            <div class="how-bloc mb-3 text-center carousel-inner">
+            <div class="carouselitem1 how carousel-item active" data-interval="5000">
+                <div class="how-body">
+                    <img src="/build/img/comment-1.png" alt="tablette tactile" width="335" height="303" class="img-fluid">
+                    <h3 class="m-auto">Rejoins toi aussi<br>ton quartier</h3>
+                    <h4 class="position-relative">9<small class="position-absolute">€99/mois</small><span class="no-engagment">sans engagment</span></h4>
+                </div>
+            </div>
+            <div class="carouselitem2 how carousel-item" data-interval="5000">
+                <div class="how-body">
+                    <img src="/build/img/comment-2.png" alt="tablette tactile" width="336" height="303" class="img-fluid">
+                    <h3 class="m-auto">Consulte les services<br>ou discute avec tes voisins</h3>
+                    <h4 class="upper">Tout est inclus !</h4>
+                </div>
+            </div>
+            <div class="carouselitem3 how carousel-item" data-interval="5000">
+                <div class="how-body">
+                    <img src="/build/img/comment-3.png" alt="bulle et argent" width="326" height="303" class="img-fluid">
+                    <h3 class="m-auto">Parraine et gagne de<br>l’argent tous les mois</h3>
+                    <h4 class="upper">Arrondis tes fins de mois</h4>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Contrôles -->
+            <a class="carousel-control-prev" href="#carouselHow" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselHow" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div>
+
+        <div class="container how-it-work" style="display:none">
+            <h2 class="text-center">Comment ça marche ?</h2>
+            <div class="how-bloc mb-3 text-center">
+                <div class="how mb-4">
+                    <div class="how-body">
+                        <img src="/build/img/comment-1.png" alt="tablette tactile" width="335" height="303" class="img-fluid">
+                        <h3 class="m-auto">Rejoins toi aussi<br>ton quartier</h3>
+                        <h4 class="position-relative">9<small class="position-absolute">€99/mois</small><span class="no-engagment">sans engagment</span></h4>
+                    </div>
+                </div>
+                <div class="how mb-4">
+                    <div class="how-body">
+                        <img src="/build/img/comment-2.png" alt="tablette tactile" width="336" height="303" class="img-fluid">
+                        <h3 class="m-auto">Consulte les services<br>ou discute avec tes voisins</h3>
+                        <h4 class="upper">Tout est inclus !</h4>
+                    </div>
+                </div>
+                <div class="how mb-4">
+                    <div class="how-body">
+                        <img src="/build/img/comment-3.png" alt="bulle et argent" width="326" height="303" class="img-fluid">
+                        <h3 class="m-auto">Parraine et gagne de<br>l’argent tous les mois</h3>
+                        <h4 class="upper">Arrondis tes fins de mois</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid sponsor-neighbors p-3">
+            <h2 class="d-flex flex-column align-items-center position-relative">
+                <span class="position-relative"> Parraine <br class="d-sm-none">tes voisins<img class="img-fluid position-absolute smile" src="/build/img/sourire.png" alt="tirelire" width="175" height="45"></span>
+            </h2>
+            <div class="sponsor-baseline text-center">Tu gagnes de l’argent TOUS LES MOIS avec tes filleuls et tes p’tits filleuls</div>
+            <div class="row no-gutters m-auto d-flex">
+                <div class="col-12 col-lg-5 col-xl-6 tirelire">
+                    <img class="mb-2 img-fluid" src="/build/img/tirelire.png" alt="tirelire" width="511" height="566">
+                    <div class="text-center talk-around">Parles-en autour de toi<br>et remplis ta tirelire !</div>
+                    <a href="#" title="Je parraine !" class="rounded-pill px-3 btn btn-sm bg-white text-orange i-sponsor">je parraine</a>
+                </div>
+                <div class="col-12 col-lg-7 col-xl small-godchild">
+                    <img class="mb-2 img-fluid" src="/build/img/ptits-fillots.png" alt="tirelire" width="845" height="782">
+                </div>
+            </div>
+            <img src="/build/img/city-cochon-blue.png" class="backcochon" width="1061" height="627" alt="fond ville parraine tes voisins">
+        </div>
+
+        <div class="container d-flex flex-column align-items-center neighbors-services">
+            <h2 class="title-neighbors-services"> Les services <br class="d-sm-none">entre voisins</h2>
+            <img class="img-fluid" src="/build/img/services-voisins.png" alt="femme avec ordinateur et téléphone géolocalisé" width="855" height="395">
+            <a href="#" title="Tous les services" class="rounded-pill px-3 btn btn-sm bg-orange text-white all-services">Tous les services</a>
+            <h2 class="title-community">la communauté Happy Voisin</h2>
+            <div class="text-community">
+                Happy Voisin est le 1er réseau social à te faire gagner de l'argent. Rejoins ton quartier et tes supers voisins. Tu paies un abonnement mensuel sans engagement, et ensuite tout est inclus ! Il n'y a pas de service payant. Propose tes services et demande de l'aide quand tu en as besoin. Un service de chat en ligne permet aussi de papoter et échanger avec tes voisins. Et parce qu'on est généreux chez Happy Voisin, tu peux parrainer tes voisins et tes amis, et ainsi gagner chaque mois de l’argent ! Tu veux être happy toi aussi ? Rejoins la communauté Happy Voisin :)
+            </div>
+        </div>
+        <div class="container-fluid footer">
+            <footer>
+                <div class="papote">
+                    Papote avec<br>tes voisins
+                    <img src="/build/img/papote.png" width="118" height="102" alt="bulle papote avec tes voisins">
+                </div>
+                <div class="row d-block d-lg-none menuFooter">
+                    <div class="col-12 col-md footerLinks accordion" id="accordionFooter">
+                        <h5 class="titleMenuFooter collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">Happy Voisin</h5>
+                        <ul id="collapse2" class="list-unstyled text-small collapse" data-parent="#accordionFooter">
+                        <li><a href="#">Écris-nous</a></li>
+                        <li><a href="#">Mon compte</a></li>
+                        <li><a href="#">facebook</a></li>
+                        <li><a href="#">Comment ça marche ?</a></li>
+                        <li><a href="#">Parrainage</a></li>
+                        <li><a href="#">Les services</a></li>
+                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row d-none d-lg-flex">
+                    <div class="col-12 col-md footerLinks">
+                        <h5>Contact</h5>
+                        <ul class="list-unstyled text-small">
+                        <li><a href="#">Écris-nous</a></li>
+                        <li><a href="#">Mon compte</a></li>
+                        <li><a href="#">facebook</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md footerLinks">
+                        <h5>S'informer</h5>
+                        <ul class="list-unstyled text-small">
+                        <li><a href="#">Comment ça marche ?</a></li>
+                        <li><a href="#">Parrainage</a></li>
+                        <li><a href="#">Les services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md footerLinks">
+                        <h5>Infos légales</h5>
+                        <ul class="list-unstyled text-small">
+                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">©Happy-voisin.fr - 2020</div>
+            </footer>
+        </div>
+    </div> 
+
+
 	<h1 class="h3 mb-3 font-weight-normal">Home</h1>
 	<div class="mb-3">
 		<a href="{{ path('app_login') }}">Login</a>
@@ -11,4 +204,5 @@
 	<div class="mb-3">
 		<a href="{{ path('app_register') }}">Register</a>
 	</div>
+	{% include 'includes/footer.html.twig' %}
 {% endblock %}

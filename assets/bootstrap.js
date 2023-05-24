@@ -1,5 +1,9 @@
 import { startStimulusApp } from '@symfony/stimulus-bridge';
 import { registerReactControllerComponents } from '@symfony/ux-react';
+// import AOS (Cool Animate Effects on Scroll)
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import 'aos/dist/aos.js';
 
 // Registers React controller components to allow loading them from Twig
 //
@@ -18,6 +22,13 @@ export const app = startStimulusApp(require.context(
     true,
     /\.[jt]sx?$/
 ));
+
+console.log(AOS);
+
+AOS.init({
+    easing: 'ease-out-back',
+    duration: 1000
+});
 
 // register any custom, 3rd party controllers here
 // app.register('some_controller_name', SomeImportedController);

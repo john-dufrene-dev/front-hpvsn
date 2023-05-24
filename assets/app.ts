@@ -10,14 +10,3 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
-
-// import AOS (Cool Animate Effects on Scroll)
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import 'aos/dist/aos.js'
-
-AOS.init({
-    easing: 'ease-out-back',
-    duration: 10000
-});
-

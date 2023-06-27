@@ -5,53 +5,158 @@
 {% block body %}
 	{% include 'includes/header.html.twig' %}
 
-    <div class="container internalContainer p-0">
+    <div class="container internalContainerBig p-0">
         <div class="internalTitle">
             Mon fil d'actualité
         </div>
-        <div class="jePapoteInput">
-        </div>
-        <div class="messagesFeed">
-            <div class="itemMessages">
-                <span class="nameMessages">Jane Doe</span><br>
-                <span class="dateMessages">Aujourd'hui à 20:20 - Ville</span>
-                <p class="message">Bonjour, je recherche une crèche pour mon enfant de 1 an dans le quartier de St Philippe. 
-                Avez-vous des recommandations ? Merci</span>
+        <div class="row internalContainerBig">
+            <div class="col-3">
+            <div class="menu-left">
+                <ul class="menu-list">
+                    <li><a href="#" class="{% if app.request.attributes.get('_route') == 'app_actuality_feed' %}active{% endif %}">Accueil</a></li>
+                    <li><a href="#"> Rechercher</a></li>
+                    <li><a href="#"> Poster une annonce</a></li>
+                    <li><a href="#"> Les demandes</a></li>
+                    <li><a href="#"> Parrainage</a></li>
+                    <li><a href="#">Les p'tites annonces</a></li>
+                    <li><a href="#">Papoter</a></li>
+                </ul>
             </div>
-            <div class="form-group p-2">
-                <div class="d-flex flex-row justify-content-center" aria-label="Choix type">
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" checked autocomplete="off"> Tout
-                        </label>
-                    </div>
+            </div>
+            <div class="col-9">
+                <div class="jePapoteInput">
+                    <form>
+                        <div class="position-relative">
+                            <input type="text" class="form-control rounded-20 border-0" placeholder="Je papote avec mes voisins">
+                            <button type="submit" class="btn btn-orange rounded-circle position-absolute">
+                                <span class="arrow-right"></span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
+                <div class="messagesFeed">
+                    <div class="itemMessages">
+                        <span class="nameMessages">Jane Doe</span><br>
+                        <span class="dateMessages">Aujourd'hui à 20:20 - Ville</span>
+                        <p class="message">Bonjour, je recherche une crèche pour mon enfant de 1 an dans le quartier de St Philippe. 
+                        Avez-vous des recommandations ? Merci</span>
+                    </div>
+                    <div class="itemMessages">
+                        <span class="nameMessages">Jane Doe</span><br>
+                        <span class="dateMessages">Aujourd'hui à 20:20 - Ville</span>
+                        <p class="message">Bonjour, je recherche une crèche pour mon enfant de 1 an dans le quartier de St Philippe. 
+                        Avez-vous des recommandations ? Merci</span>
+                    </div>
+                    <a href="#" title="Voir tout" class="rounded-pill px-3 btn btn-sm bg-orange text-white post-annoucement">Voir tout</a>
+                </div>
+                <div class="listAnnouncements">
+                    <h2 class="h2titlegray">Les dernières P'tites annonces</h2>
+                </div>
+                {# {% for announcement in announcements %} #}
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div><hr>
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div><hr>
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div>
+                {# {% endfor %} #}
+                <div class="listAnnouncements">
+                    <h2 class="h2titlegray">Les dernières demandes</h2>
+                </div>
+                {# {% for announcement in announcements %} #}
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div><hr>
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div><hr>
+                    <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
+                        <div class="col-md-4 thumb-annnouncementlist">
+                            <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 content-annnouncementlist">
+                            <div class="d-flex head-content-annnouncementlist">
+                                <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
+                                <div class="ml-auto price-annnouncementlist"><span class="price">10€</span> <span class="badge badge-secondary bg-orange">location</span></div>
+                            </div>
+                            <div class="content-annnouncementlist">
+                                <h3 class="title-annnouncementlist">Cherche appareil à raclette</h3>
+                                <p class="description-annnouncementlist">Bonjour, j’ai besoin d’un appareil à raclette pour 8 personnes avec grill au dessus. J’attends vos propositions !</p>
+                                <div class="categories-annnouncementlist"><a href="#" class="text-orange">Objet</a><a href="#" class="text-orange">Électroménager</a></div>
+                            </div>
+                        </div>
+                    </div>
+                {# {% endfor %} #}
             </div>
         </div>
-        <div class="listAnnouncements">
-            <div class="titleListAnnouncements">
-                Les dernières P'tites annonces
-            </div>
-        </div>
-        {# {% for announcement in announcements %} #}
-            <div id="item_announcement_{#{announcement.id}#}" class="row announces-item">
-                <div class="col-md-4 thumb-annnouncementlist">
-                    <img src="/build/img/img_annonce.jpg" alt="" class="img-fluid">
-                </div>
-                <div class="col-md-8 content-annnouncementlist">
-                    <div class="d-flex head-content-annnouncementlist">
-                        <div class="hour-annnouncementlist">Aujourd'hui à 22:20 - Par Sarah</div>
-                        <div class="ml-auto price-annnouncementlist">10€ <span class="badge badge-secondary bg-orange">{#{announcement.object}#}</span></div>
-                    </div>
-                    <div class="content-annnouncementlist">
-                        <h3 class="title-annnouncementlist">{#{announcement.title}#}</h3>
-                        <p class="description-annnouncementlist">{#{announcement.description}#}</p>
-                        <a href="/annonces/{#{announcement.id}#}-{#{announcement.slug}#}">annonce</a>
-                        <div class="categories-annnouncementlist"><a href="#">Objet</a><a href="#">Électroménager</a></div>
-                    </div>
-                </div>
-            </div><hr>
-        {# {% endfor %} #}
     </div>
 
     {% include 'includes/footer.html.twig' %}

@@ -15,6 +15,7 @@
     --greenblue-title:#18a0ac;
     --greenblue-navbar:#0ea3c1;
     --black-title:#080808;
+    --gray-title:#868686;
 }
 .text-orange {
     color: var(--orange-default);
@@ -55,10 +56,22 @@
     line-height: 44px;
     margin: auto;
     margin-top: 73px;
+    margin-bottom: 50px;
     text-align: center;
 }
 .internalContainer {
     max-width: 928px;
+    padding-top: 25px;
+}
+.internalContainerBig {
+    max-width: 1320px;
+    padding-top: 25px;
+}
+.h2titlegray {
+    font-family:"Poppins-semiBold";
+    color: var(--gray-title);
+    font-size: 1.87rem;
+    margin: 45px 0px 35px;
 }
 
 /* FOOTER */

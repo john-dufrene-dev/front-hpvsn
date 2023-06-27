@@ -439,9 +439,199 @@
     height: 792px;
 }
 
+// ANNONCES ITEM
+.announces-item {
+
+    .head-content-annnouncementlist {
+        margin-bottom: 25px;
+
+        .hour-annnouncementlist {
+            font-family: 'Poppins-semiBold';
+            color: #bbb5b5;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .price-annnouncementlist {
+            margin-left: auto;
+            vertical-align: middle;
+        }
+    
+        .price-annnouncementlist {
+            .price {
+                font-family: 'Poppins-semiBold';
+                color: black;
+                font-size: 20px;
+                vertical-align: middle;
+            }
+            .badge {
+                font-family: 'Poppins-semiBold';
+                font-size: 13px;
+                border-radius: 20px;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    
+    .content-annnouncementlist {
+        padding-top: 20p;
+
+        .title-annnouncementlist {
+            font-family: 'Poppins-semiBold';
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .description-annnouncementlist {
+            color: #9f9e9e;
+            font-size: 15px;
+            max-width: 500px;
+        }
+        .categories-annnouncementlist {
+            a {
+                font-family: 'Poppins-semiBold';
+                font-size: 14px;
+                margin-right: 10px;
+            }
+        }
+    }
+    
+}
+
+
+
 // PAGE MON FIL D'ACTUALITES
 .messagesFeed {
     background-color: var(--greenblue-default);
     padding: 36px 28px;
     border-radius: 20px;
 }
+.menu-left {
+    width: 100%;
+    max-width: 334px;
+    border-radius: 10px;
+    background-color: #0fa3c0;
+    padding: 30px 20px;
+  
+    .menu-list {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        position: relative;
+        height:33px;
+        padding-left: 45px; /* Espacement pour l'icône */
+        margin-bottom: 27px; /* Ecart vertical entre les liens */
+  
+        a {
+          font-size: 14px;
+          color: white;
+          text-decoration: none;
+          display: block;
+          line-height: 33px;
+  
+          &:hover,
+          &:focus,
+          &:active {
+            color: black;
+            text-decoration: none;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 33px;
+            height: 33px;
+            background-size: cover;
+          }
+          &.active {
+              color: black;
+          }
+        }
+  
+  
+        &:nth-child(1) a::before {
+          background-image: url("/public/build/img/icone1-menuleft.png");
+        }
+        &:nth-child(2) a::before {
+          background-image: url("/public/build/img/icone2-menuleft.png");
+        }
+        &:nth-child(3) a::before {
+          background-image: url("/public/build/img/icone3-menuleft.png");
+        }
+        &:nth-child(4) a::before {
+          background-image: url("/public/build/img/icone4-menuleft.png");
+        }
+        &:nth-child(5) a::before {
+          background-image: url("/public/build/img/icone5-menuleft.png");
+        }
+        &:nth-child(6) a::before {
+          background-image: url("/public/build/img/icone6-menuleft.png");
+        }
+        &:nth-child(7) a::before {
+          background-image: url("/public/build/img/icone7-menuleft.png");
+        }
+  
+        /* Ajoutez les styles pour les autres icônes personnalisées ici */
+      }
+    }
+  }
+
+  .itemMessages {
+    background: #FFF;
+    padding: 25px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  
+    .nameMessages {
+      color: #0ea3c0;
+      font-family: 'Poppins-semiBold';
+      font-size: 18PX;
+    }
+  
+    .dateMessages {
+      color: #bbb5b5;
+      font-family: 'Poppins-semiBold';
+      font-size: 14px;
+    }
+  
+    .message {
+      color: #9f9e9e;
+      font-size: 15px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+  }
+
+
+.form-control {
+    background-color: #eff4f6;
+    border-radius: 30px;
+    line-height: 42px;
+    padding-left: 37px;
+    margin-bottom: 40px;
+}
+
+.btn-orange {
+    background-color: orange;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    z-index: 1;
+    top: 9px;
+    right: 13px;
+
+    .arrow-right {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        margin-top: 3px;
+        margin-left: 3px;
+    }
+}
+  

@@ -4,7 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="h3 mb-3 font-weight-normal">Profil</h1>
+{% include 'includes/header.html.twig' %}
+<div class="container internalContainerBig p-0">
+    <div class="internalTitle">
+        Mon Compte
+    </div>
 
 	{% if app.user %}
 
@@ -13,11 +17,30 @@
 			{{ app.user.userIdentifier }},
 			<a href="{{ path('app_logout') }}">Logout</a>
 		</div>
-
-		<div {{ react_component('Account', {user: app.user|serialize(format = 'json')}) }}>
-			Loading...
-			<i class="fas fa-cog fa-spin fa-3x"></i>
-		</div>
 		<div class="js-user" data-is-authenticated="{{ app.user ? 'true' : 'false' }}" data-user="{{ app.user|serialize(format = 'json') }}"></div>
+
+		<div class="row internalContainerBig">
+			<div class="col-3">
+			{% include 'includes/accountmenu.html.twig' %}
+			</div>
+			<div class="col-9">
+				<div {{ react_component('Account', {user: app.user|serialize(format = 'json')}) }}>
+					Loading...
+					<i class="fas fa-cog fa-spin fa-3x"></i>
+				</div>
+			</div>
+		</div>
 	{% endif %}
+</div>
+{% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@ads') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@ads') }}
 {% endblock %}

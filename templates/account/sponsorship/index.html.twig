@@ -3,18 +3,49 @@
 {% block title %}Hello SponsorshipController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	{% include 'includes/header.html.twig' %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="container internalContainerBig p-0">
+        <div class="internalTitle">
+            Parrainage
+        </div>
+        
+        {% if app.user %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/thomasguerri/Documents/Perso/sites/localhost/hpvsnfront/src/Controller/Account/SponsorshipController.php'|file_link(0) }}">src/Controller/Account/SponsorshipController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/thomasguerri/Documents/Perso/sites/localhost/hpvsnfront/templates/account/sponsorship/index.html.twig'|file_link(0) }}">templates/account/sponsorship/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <div class="row internalContainerBig">
+            <div class="col-3">
+            {% include 'includes/accountmenu.html.twig' %}
+            </div>
+            <div class="col-9">
+                <div {{ react_component('Sponsorship', {user: app.user|serialize(format = 'json')}) }}>
+                    Loading...
+                    <i class="fas fa-cog fa-spin fa-3x"></i>
+                </div>
+            </div>
+        </div>
+
+            <div class="mb-3">
+                You are logged in as
+                {{ app.user.userIdentifier }},
+                <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+
+            <div class="js-user" data-is-authenticated="{{ app.user ? 'true' : 'false' }}" data-user="{{ app.user|serialize(format = 'json') }}"></div>
+        {% endif %}
+    </div>
+    {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@ads') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@ads') }}
 {% endblock %}

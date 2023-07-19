@@ -2,6 +2,7 @@ const Encore = require('@symfony/webpack-encore');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const path = require("path");
+// const CopyPlugin = require('copy-webpack-plugin');
 
 dotenv.config({ path: '.env.local' });
 
@@ -50,13 +51,23 @@ Encore
     )
 
     // Set the path the files are copied to
-    .copyFiles({
-        from: './assets/img',
-        pattern: /\.(png|jpg|jpeg|webp|gif)$/,
-        // to path is relative to the build directory
-        to: 'img/[path][name].[ext]'
-    })
-    
+    // .copyFiles({
+    //     from: './assets/img',
+    //     pattern: /\.(png|jpg|jpeg|webp|gif)$/,
+    //     // to path is relative to the build directory
+    //     to: 'img/[path][name].[ext]'
+    // })
+
+    // with pnpm you must use this copy system for froala-editor
+    // .addPlugin(
+    //     new CopyPlugin({
+    //         patterns: [{
+    //             from: './assets/img/',
+    //             to: 'img/[path][name][ext]',
+    //         }],
+    //     })
+    // )
+
     /*
      * FEATURE CONFIG
      *

@@ -107,7 +107,7 @@
                     margin-bottom: 12px;
                     &.collapsed {
                         &:after{
-                            background: url(/public/build/img/plusmoins-footer.png) no-repeat center;
+                            background: url(/assets/img/plusmoins-footer.png) no-repeat center;
                             background-position: 0px 0px;
                         }
                     }
@@ -115,7 +115,7 @@
                         content: '';
                         width: 23px;
                         height: 23px;
-                        background: url(/public/build/img/plusmoins-footer.png) no-repeat center;
+                        background: url(/assets/img/plusmoins-footer.png) no-repeat center;
                         background-position: -23px 0px;
                         display: block;
                         position: absolute;
@@ -158,7 +158,7 @@
 @media (min-width:992px) {
     .footer {
         height: 353px;
-        background:url(/public/build/img/fond-footer.png) no-repeat bottom center;
+        background:url(/assets/img/fond-footer.png) no-repeat bottom center;
         background-size: cover;
         margin-top: 0px;
         position:relative;

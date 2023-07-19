@@ -13,5 +13,14 @@ export class CustomerApiClient extends ApiClient {
             }
         });
     }
+
+    async getSponsor(token) {
+        return this.get({
+            endpoint: `/api/account/customer/sponsor`,
+            headers: {
+                'Authorization': token
+            }
+        });
+    }
 }
 

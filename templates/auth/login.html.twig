@@ -2,13 +2,18 @@
 
 {% block title %}Login Controller{% endblock %}
 
-{% block javascripts %}
-	{{parent()}}
-	{{ encore_entry_script_tags('@auth') }}
-{% endblock %}
-
 {% block body %}
-	<h1 class="h3 mb-3 font-weight-normal">Please login</h1>
+	{% include 'includes/headerregister.html.twig' %}
+	<div class="container internalContainer p-0">
+        <h1 class="internalTitle">
+            Connexion
+        </h1>
+
+		<div {{ react_component('Login', {user: app.user|serialize(format = 'json')} ) }}>
+			Loading...
+			<i class="fas fa-cog fa-spin fa-3x"></i>
+		</div>
+	</div>
 
 	{% if error %}
 		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -26,4 +31,16 @@
 		<input type="hidden" id="auth_action" name="auth_action" value="login">
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+
+{% include 'includes/footerregister.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@auth') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@auth') }}
 {% endblock %}

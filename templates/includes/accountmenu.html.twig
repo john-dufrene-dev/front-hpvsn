@@ -1,11 +1,11 @@
 <div class="menu-left">
     <ul class="menu-list">
-        <li><a href="#" class="{% if app.request.attributes.get('_route') == 'app_actuality_feed' %}active{% endif %}">Accueil</a></li>
-        <li><a href="#"> Rechercher</a></li>
-        <li><a href="#"> Poster une annonce</a></li>
-        <li><a href="#"> Les demandes</a></li>
-        <li><a href="#"> Parrainage</a></li>
-        <li><a href="#">Les p'tites annonces</a></li>
+        <li><a href="./" class="{% if app.request.attributes.get('_route') == 'app_actuality_feed' %}active{% endif %}">Accueil</a></li>
+        <li><a href="/annonces"> Rechercher</a></li>
+        <li><a href="/annonces/ajouter-annonce"> Poster une annonce</a></li>
+        <li><a href="/demandes"> Les demandes</a></li>
+        <li><a href="/parrainage"> Parrainage</a></li>
+        <li><a href="/annonces">Les p'tites annonces</a></li>
         <li><a href="#">Papoter</a></li>
     </ul>
 </div>

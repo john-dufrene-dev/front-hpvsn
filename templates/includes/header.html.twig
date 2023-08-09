@@ -7,17 +7,17 @@
         <div class="collapse navbar-collapse justify-content-center" id="main_nav">
             <ul class="navbar-nav navbar-left">
                 {# <li class="nav-item"><a class="badge nav-link" href="#"> <img class="logo-happyvoisin d-block mx-auto mb-4 position-relative" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/img/logo-interne.png" alt="logo happy voisin" width="149" height="169">  </a></li> #}
-                <li class="nav-item"><a class="badge nav-link" href="#"> Accueil </a></li>
+                <li class="nav-item"><a class="badge nav-link" href="./"> Accueil </a></li>
                 <li class="nav-item"><a class="badge nav-link" href="#"> Papoter </a></li>
-                <li class="nav-item"><a class="badge nav-link" href="#"> Les p'tites annonces </a></li>
-                <li class="nav-item"><a class="rounded-pill btn btn-sm spontsorship-navbar" href="#"> Les demandes </a></li>
-                <li class="nav-item"><a class="badge nav-link" href="#"> Poster une annonce </a></li>
+                <li class="nav-item"><a class="badge nav-link" href="/annonces"> Les p'tites annonces </a></li>
+                <li class="nav-item"><a class="rounded-pill btn btn-sm spontsorship-navbar" href="/demandes"> Les demandes </a></li>
+                <li class="nav-item"><a class="badge nav-link" href="/annonces/ajouter-annonce"> Poster une annonce </a></li>
             </ul>
         </div> <!-- navbar-collapse.// -->
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="badge nav-link" href="#"> Ville </a></li>
-            <li class="nav-item nav-item-inscription"><a class="btn btn-sm btn-inscription" href="#"> Mon compte </a></li>
+            <li class="nav-item nav-item-inscription"><a class="btn btn-sm btn-inscription" href="{{ path('app_login') }}"> Mon compte </a></li>
         </ul>
     </div> <!-- container.// -->
 </nav>

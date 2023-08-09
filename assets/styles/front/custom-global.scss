@@ -37,6 +37,16 @@
     background-color: #ffffff;
     border-color: #e5e5e5;
 }
+.big-button {
+    border: 0px;
+    padding: 0px;
+    font-family: "Junior";
+    width: 331px;
+    height: 71px;
+    line-height: 71px;
+    font-size: 30px;
+    margin-top: 63px;
+}
 ::placeholder {
     color:#b8b8b8 !important;
     font-family:"Poppins-bold";
@@ -74,6 +84,42 @@
     margin: 45px 0px 35px;
 }
 
+/* FORMULAIRES */
+
+.container-form {
+    padding: 0 15px;
+    max-width: 745px;
+    margin: 70px auto;
+    text-align: center;
+    hr {
+        color:#FFF;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 21px;
+    
+    .form-control {
+      height: 89px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border: none;
+      padding: 0 2.75rem; // équivalent à 0 47px
+      font-size: 18px;
+      color: #000000;
+      
+      &::placeholder {
+        color: #666666 !important;
+      }
+    }
+    
+    textarea {
+      height: 297px !important;
+      padding-top: 37px !important;
+      resize: none; // Empêche la redimension du textarea
+    }
+  }
+  
 /* FOOTER */
 .footer {
     background: #13a1b7;

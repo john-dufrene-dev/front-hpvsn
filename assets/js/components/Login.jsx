@@ -19,12 +19,8 @@ export default function Login(props) {
         let formObject = Object.fromEntries(data.entries());
 
         const object = {
-            auth_email: formObject.auth_email,
-            auth_password: formObject.auth_password,
-            template: formObject.template,
-            extras: [],
-            files: [],
-            want_to_subscribe: false
+            email: formObject.auth_email,
+            plainPassword: formObject.auth_password,
         };
 
         message.sendMessage(object)
@@ -41,7 +37,7 @@ export default function Login(props) {
         <>
             {alert.status &&
                 <div className={alert.alert} role="alert">
-                    Vos identifiants sont in corrects
+                    Vos identifiants sont incorrects
                 </div>
             }
             <div className="container-form">
@@ -52,6 +48,7 @@ export default function Login(props) {
                 <div className="form-group">
                 <input type="password" className="form-control" id="auth_password" name="auth_password" defaultValue="" placeholder="Mot de passe" />
                 </div>
+                <a href="/register" className="d-block text-white">Je n'ai pas de compte, je m'inscris</a>
                 <input type="hidden" id="template" name="template" defaultValue="login_form" />
                 <input type="hidden" id="subject" name="subject" defaultValue="Connexion Happy Voisin" />
 		        <input type="hidden" id="auth_action" name="auth_action" defaultValue="login" />

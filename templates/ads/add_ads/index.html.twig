@@ -6,8 +6,23 @@
 	{% include 'includes/header.html.twig' %}
     <div class="container internalContainerBig p-0">
         <div class="internalTitle">
-            Ajouter une annonce
+            Nouvelle annonce/demande
         </div>
-    </div>
+
+		<div {{ react_component('CreateAds', {user: app.user|serialize(format = 'json')} ) }}>
+			Loading...
+			<i class="fas fa-cog fa-spin fa-3x"></i>
+		</div>
+	</div>
     {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@ads') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@ads') }}
 {% endblock %}

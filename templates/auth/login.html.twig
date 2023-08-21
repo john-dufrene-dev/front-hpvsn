@@ -7,30 +7,24 @@
 	<div class="container internalContainer p-0">
         <h1 class="internalTitle">
             Connexion
-        </h1>
-
-		<div {{ react_component('Login', {user: app.user|serialize(format = 'json')} ) }}>
-			Loading...
-			<i class="fas fa-cog fa-spin fa-3x"></i>
+        </h1>{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+		
+		<div class="container-form">
+			<form id="login_form" method="POST">
+				<div class="form-group">
+				<input type="email" class="form-control" id="auth_email" name="auth_email" value="" placeholder="Email" />
+				</div>
+				<div class="form-group">
+				<input type="password" class="form-control" id="auth_password" name="auth_password" value="" placeholder="Mot de passe" />
+				</div>
+				<input type="hidden" id="auth_action" name="auth_action" value="login">
+				<a href="/register" class="d-block text-white">Je n'ai pas de compte, je m'inscris</a>
+				<button type="submit" class="rounded-pill px-3 btn btn-sm bg-orange text-white big-button">Je me connecte</button>
+			</form>
 		</div>
 	</div>
-
-	{% if error %}
-		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-	{% endif %}
-
-	<form id="login_form" method="POST">
-		<div class="form-group">
-			<label for="auth_email">Email address</label>
-			<input name="auth_email" value="{{ last_username }}" type="email" class="form-control" id="auth_email" aria-describedby="auth_email_help" placeholder="Enter email" autocomplete="username" required autofocus>
-		</div>
-		<div class="form-group">
-			<label for="auth_password">Passwords</label>
-			<input name="auth_password" type="password" class="form-control" id="auth_password" aria-describedby="auth_password_help" placeholder="Enter password" autocomplete="current-password" required>
-		</div>
-		<input type="hidden" id="auth_action" name="auth_action" value="login">
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
 
 {% include 'includes/footerregister.html.twig' %}
 {% endblock %}

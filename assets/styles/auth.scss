@@ -1,6 +1,9 @@
 body {
+    position: relative;
     background: rgb(15,79,192);
     background: linear-gradient(45deg, rgba(15,79,192,1) 0%, rgba(15,163,192,1) 100%);
+    min-height: 100vh;
+    padding-bottom: 102px;
 }
 .internalTitle {
     color: white;
@@ -13,6 +16,11 @@ body {
         &::placeholder {
             color: #FFF !important;
         }
+        &:focus {
+            background: rgba(255, 255, 255, 0.3);
+            color: #FFF;
+            outline: none;
+        }
     }
 }
 
@@ -21,6 +29,8 @@ body {
         background: none !important;
         border-top: 1px solid #278cc6;
         height: auto !important;
+        position: absolute;
+        bottom: 0px;
         footer {
             padding-top: 0px;
             padding-bottom: 40px;

@@ -114,8 +114,7 @@ header {
                 width: 149px;
                 height: auto;
             }
-            .navbar-collapse {
-                margin-left: 18% !important;    
+            .navbar-collapse { 
                 .navbar-left {
                     margin-top: -9px;
                     padding-left: 10px;
@@ -178,6 +177,11 @@ header {
                 }
             }
             
+        }
+        .navbar-collapse {
+            &.internal-navbar {
+                margin-left: 18% !important; 
+            }
         }
     }
     .navbar.scrolled {

@@ -364,3 +364,222 @@
         }
     }  
 }
+
+/* Bloc Parraine tes Voisins */
+.sponsor-neighbors {
+    overflow: hidden;
+    position: relative;
+    background: var(--orange-default);
+    .sponsor-baseline {
+        font-family: "Poppins-bold";
+        color: black;
+        font-size: 16.17px;
+        line-height: 27px;
+        margin: 29px 0px 27px;
+    }
+    h2 {
+        color: white;
+        font-size: 42px;
+        line-height: 38px;
+        margin: 18px 0;
+        text-align: center;
+        span {
+            font-family: "Junior";
+            .smile {
+                right: -11px;
+                bottom: -8px;
+                width: 64px;
+            }
+        }
+    }
+    .row {
+        max-width: 1466px;
+        .tirelire {
+            z-index: 2;
+            text-align: center;
+            img {
+                width: 231px;
+            }
+            .talk-around {
+                font-family: "Poppins-bold";
+                color: white;
+                margin: auto;
+                margin-top: 44px;
+                font-size: 22.36px;
+                line-height: 31px
+            }
+            .i-sponsor {
+                font-family: "Junior";
+                font-size: 33.52px;
+                width: 80%;
+                max-width: 250px;
+                margin: 23px auto 38px;
+                padding: 0px;
+                line-height: 45px;
+            }
+        }
+        .small-godchild {
+            margin-top: 0px;
+            order: -1;
+            max-width: 340px;
+            margin: auto;
+        }
+    }
+    .backcochon {
+        position: absolute;
+        bottom: 50%;
+        left: 24%;
+        opacity: 0.6;
+        mix-blend-mode: multiply;
+        mix-blend-mode: color-burn;
+        height: 210px;
+        width: auto;
+    }
+}
+@media (min-width: 520px) and (max-width:991px) {
+    .sponsor-neighbors {
+        .row {
+            .tirelire {
+                img {
+                    width: 341px;
+                }
+            }
+            .small-godchild {
+                text-align: center;
+                max-width: 100%;
+                img {
+                    max-width: 460px;
+                }
+            }
+        }
+    }
+    .backcochon {
+        height: 40%;
+    }
+
+}
+@media (min-width: 992px) {
+    .sponsor-neighbors {
+        padding: 16px 100px !important;
+        .sponsor-baseline {
+            font-size: 35px;
+            line-height: 45px;
+            margin: 45px 0px 10px;
+        }
+        h2 {
+            font-size: 80px;
+            margin: 40px 0;
+            span {
+                .smile {
+                    right: -28px;
+                    bottom: -30px;
+                    width: 120px;
+                }
+                br {
+                    display:none;
+                }
+            }
+        }
+        .row {
+            max-width: 1530px;
+            .tirelire {
+                order: 1;
+                padding-left: 0px;
+                width: 100%;
+                max-width: 511px;
+                padding: 20px;
+                img {
+                    width: 100%;
+                }
+                .talk-around {
+                    margin-left: 0px;
+                    margin-top: 30px;
+                    font-size: 20px;
+                }
+                .i-sponsor {
+                    font-size: 35px;
+                    width: 80%;
+                    max-width: 321px;
+                    margin: 20px auto 47px 0px;
+                }
+            }
+            .small-godchild {
+                margin-top: 30px;
+                order: 2;
+                padding-right: 0px;
+                max-width: 100%;
+                padding: 20px;
+            }
+        }
+        .backcochon {
+            bottom: 0px;
+            left: 50%;
+            height: initial;
+            width: initial;
+        }
+    }
+}
+@media (min-width: 1530px) {
+    .sponsor-neighbors {
+        padding: 16px 100px !important;
+        .sponsor-baseline {
+            font-size: 35px;
+            line-height: normal;
+            margin: 46px 0px 69px;
+        }
+        h2 {
+            font-size: 100px;
+            line-height: 100px;
+            margin: 39px 0;
+            span {
+                .smile {
+                    right: -40px;
+                    bottom: -18px;
+                    width: auto;
+                }
+                br {
+                    display:none;
+                }
+            }
+        }
+        .row {
+            max-width: 1530px;
+            .tirelire {
+                order: 1;
+                padding: 0px;
+                padding-left: 32px;
+                max-width: 653px;
+                text-align: left;
+                img {
+                    max-width: 511px;
+                }
+                .talk-around {
+                    margin-left: 0px;
+                    margin-top: 61px;
+                    font-size: 30px;
+                    line-height: 46px;
+                    max-width: 511px;
+                }
+                .i-sponsor {
+                    font-size: 45px;
+                    width: 80%;
+                    max-width: 321px;
+                    line-height: 60px;
+                    margin: 29px auto 96px 93px;
+                }
+            }
+            .small-godchild {
+                margin-top: 30px;
+                order: 2;
+                padding: 0px;
+                padding-right: 32px;
+            }
+        }
+        .backcochon {
+            bottom: 0px;
+            left: 50%;
+            height: initial;
+            width: initial;
+        }
+    }
+}

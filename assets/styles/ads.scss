@@ -1,15 +1,3 @@
-// BAN ANNOUNCE FILTER
-.ban-announce-filter {
-    .form-control {
-        border-radius: 1.25rem;
-        color: #c2c1c1;
-        border-color: #e5e5e5;
-    }
-    .btn {
-        border-radius: 1.25rem;
-    }
-}
-
 /* HEADER */
 .header-top {
     height: 220px !important;
@@ -355,8 +343,6 @@
     }
 }
 
-/* CONTENU */
-
 /* H2 CONTENU TRI ANNONCES */
 .head-list-announce {
     .title-list-announce {
@@ -497,8 +483,6 @@
     
 }
 
-
-
 // PAGE MON FIL D'ACTUALITES
 .messagesFeed {
     background-color: var(--greenblue-default);
@@ -634,4 +618,118 @@
         margin-left: 3px;
     }
 }
-  
+.ajouterAnnonce {
+    .form-group {
+        text-align: left;
+        &.formMb40{
+            margin-bottom: 40px;
+        }
+        &.formMb70{
+            margin-bottom: 70px;
+        }
+        .form-control {
+            &::placeholder{
+                color: #000 !important;
+                font-size: 17px;
+                font-family: "poppins-Medium";
+            }
+        }
+        .form-select {
+            border-radius: 40px;
+            line-height: 48px;
+            max-width: 430px;
+            padding-left: 44px;
+            margin-bottom: 40px;
+            font-size: 17px;
+            border-color: #d4d4d4;
+        }
+        .btn-group{
+            .btn {
+                border-radius: 10px !important;
+                border:none;
+                font-size: 15px !important;
+                width: 140px !important;
+                line-height: 42px;
+                background-color: var(--gray-btnAds) !important;
+                color: black !important;
+            }
+            input[aria-label="Disabled"]+.btn {
+                background-color: var(--gray-btnAds) !important;
+                color: var(--gray-disableLabel) !important;
+            }
+        }
+        .btn-check:checked+.btn {
+            background-color: var(--greenblue-addAdsbtn) !important;
+            color: white !important;
+        }
+        label {
+            font-family: "poppins-semiBold";
+            color: var(--greenblue-addAds);
+            font-size: 16px;
+            margin-right: 7px;
+            width: 112px;
+            &[aria-label="Disabled"]{
+                color: var(--gray-disableLabel) !important;
+            }
+            &.bigLabel{
+                width: auto;
+                margin-bottom: 28px;
+                font-size: 18px;
+            }
+        }
+        .adsInfos {
+            font-size: 12px;
+            color: #656565;
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 30px;
+        }
+        .dropzone-inner {
+            background: #fd7e34;
+            border-radius: 10px;
+            color: #FFF;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 40px;
+            max-width: 240px;
+            cursor: pointer;
+            p {
+                font-family: 'Poppins-bold';
+                font-size: 14px;
+            }
+            &:hover {
+                border: 3px dashed #FFF;
+                background: #6ad2e6;
+            }
+        }
+        .file-preview {
+            position: relative;
+            width: 120px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 10px 0px;
+            border: 1px solid #acacac;
+            display: inline-flex;
+            margin-right: 8px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+            button {
+                position: absolute;
+                bottom: 1px;
+                right: 1px;
+                color: #FFF;
+                border-radius: 5px 5px 10px 5px;
+                background: rgba(0,0,0, 0.8);
+                border: 1px solid #FFF;
+            }
+        }
+        .google-map {
+            width: 100%;
+            max-width: 712px;
+            height: 252px;
+        }
+    }
+}

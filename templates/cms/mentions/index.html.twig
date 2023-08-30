@@ -8,6 +8,68 @@
         <div class="internalTitle">
             Mentions légales
         </div>
+
+        <div class="container d-flex flex-column text-start">
+            <h2 class="smalltitleorange">Informations générales</h2>
+            <p class="textstandard text-start p-0">
+            Conformément aux dispositions des articles 6-III et 19 de la loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie Numérique, nous vous informons que :<br>
+            Le site Internet www.happyvoisin.fr est un site édité par :<br>
+            La Société Happy Voisin,<br>
+            SAS au capital de 300€,<br>
+            Inscrite au RCS de Grasse sous le numéro ......<br>
+            Dont les locaux sont situés ......<br>
+            N° TVA : FR ......<br>
+            Directeur de publication : Jérôme Laguel en qualité de gérant de la société Happy Voisin,<br>
+            Le prestataire assurant le stockage direct et permanent de www.happyvoisin.fr est :<br>
+            .....<br>
+            Rue .....<br>
+            Les utilisateurs du site peuvent contacter l'administrateur à contact@happyvoisin.fr<br>
+            Le fichier de données collectées et traitées via le Site a fait l’objet d’une déclaration auprès de la CNIL sous le numéro .....
+            </p>
+            
+            <h2 class="smalltitleorange">Conditions d'utilisation</h2>
+            <p class="textstandard text-start p-0">
+            L'utilisateur reconnaît avoir pris connaissance et s'engage à respecter les conditions de vente et d'utilisation figurant sur une page spécifique, librement accessible ici
+            Il reconnaît également avoir été informé des conditions de la politique de respect de la vie privée librement accessible : ici
+            L'utilisateur du site internet www.allovoisins.com reconnaît disposer de la capacité juridique, de la compétence et des moyens nécessaires pour accéder et utiliser ce Site.
+            L'utilisateur du Site reconnaît avoir vérifié que la configuration informatique utilisée ne contient aucun virus ou contenu susceptible de menacer la sécurité du Site et qu'elle est en parfait état de fonctionnement.
+            Mise en garde sur les informations
+            happyvoisin.fr met tout en œuvre pour offrir aux utilisateurs des informations et/ou outils disponibles et vérifiés mais ne saurait être tenu pour responsable des erreurs, d'une absence de disponibilité des informations et/ou de la présence d'un virus sur son site.
+            Les informations fournies par happyvoisin.fr et ses éventuels partenaires le sont à titre indicatif. Ceux-ci ne sauraient garantir l'exactitude, la complétude, l'actualité des informations diffusées par le Site. Ces informations ne sauraient dispenser l'utilisateur d'une analyse complémentaire et personnalisée. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.
+            Pour des raisons de maintenance, happyvoisin.fr pourra interrompre l'accès de son site et s'efforcera d'en avertir préalablement les utilisateurs dès lors que cela est possible.
+            </p>
+            
+            <h2 class="smalltitleorange">Droits de propriété</h2>
+            <p class="textstandard text-start p-0">
+            La structure générale, ainsi que les textes, images animées ou non, sons, savoir-faire..., et tout autre élément composant le site y compris la technologie sous-jacente, sont la propriété exclusive de happyvoisin.fr et de tiers ayant autorisé happyvoisin.fr à les exploiter.
+            Sauf dispositions explicites, il est interdit de reproduire, modifier, transmettre, publier, adapter, sur quelque support que ce soit, ou exploiter de quelque manière que ce soit, tout ou une partie du site sans l'autorisation écrite au préalable de happyvoisin.fr. Ceci constituerait une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+            Il en est de même des bases de données figurant, le cas échéant, sur le Site qui sont protégées par les dispositions de la loi du 1er juillet 1998 portant transposition dans le Code de la propriété intellectuelle de la directive du 11 mars 1996 relative à la protection juridique des bases de données, et dont happyvoisin.fr est producteur.
+            Les marques de happyvoisin.fr et de ses partenaires, ainsi que les logos figurant sur le site sont des marques déposées par leurs titulaires respectifs.
+            Toute reproduction totale ou partielle de ces marques ou logos, effectuée à partir des éléments du Site sans l'autorisation expresse de happyvoisin.fr, est donc prohibée, au sens de l'article L.713-2 du Code de la propriété intellectuelle.
+            </p>
+            
+            <h2 class="smalltitleorange">Hyperliens</h2>
+            <p class="textstandard text-start p-0">
+            Un lien simple renvoyant directement à la page d'accueil du site peut être mis en place sur un site tiers, à la condition d'avoir obtenu au préalable l'autorisation expresse de 2CED. Il ne s'agira pas dans ce cas d'une convention implicite d'affiliation.
+            En revanche, est formellement interdit tout lien hypertexte renvoyant au site www.happyvoisin.fr et utilisant la technique du lien profond ("deep linking ou framing"), c'est-à-dire que les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site, mais accessible par l'ouverture d'une fenêtre
+            Dans tous les cas, tout lien, même expressément autorisé, devra être retiré sur simple demande de happyvoisin.fr.
+            happyvoisin.fr ne saurait être responsable de l'accès par les utilisateurs via les liens hypertextes mis en place dans le cadre du site internet en direction d'autres ressources présentes sur le réseau internet.
+            Les fonctionnalités de Google Analytics pour les annonceurs display sont activées pour sur ce site (Remarketing).
+            Google utilise des cookies pour diffuser nos annonces sur les sites de son Reseau Display.
+            Grâce au cookie DoubleClick, Google adapte les annonces diffusées aux utilisateurs en fonction de leur navigation sur notre site.
+            Vous pouvez désactiver l'utilisation de cette fonctionnalité en vous rendant sur le gestionnaire de préférences pour les annonces
+            </p>
+        </div>
     </div>
     {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@cms') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@cms') }}
 {% endblock %}

@@ -14,8 +14,15 @@
     --greenblue-darken:#096575;
     --greenblue-title:#18a0ac;
     --greenblue-navbar:#0ea3c1;
+    --greenblue-addAds:#10a2be;
+    --greenblue-addAdsbtn:#6ad2e6;
     --black-title:#080808;
     --gray-title:#868686;
+    --gray-btnAds:#f9f9f9;
+    --gray-disableLabel:#dadada;
+}
+a {
+    text-decoration: none;
 }
 .text-orange {
     color: var(--orange-default);
@@ -85,6 +92,30 @@
     color: var(--gray-title);
     font-size: 1.87rem;
     margin: 45px 0px 35px;
+}
+.bigtitleblue {
+    color: var(--greenblue-title);
+    font-family: "Junior";
+    font-size: 80px;
+    line-height: 80px;
+    margin-top: 95px;
+    margin-bottom: 35px;
+}
+.textstandard {
+    text-align: center;
+    max-width: 1340px;
+    padding: 0 20px;
+    font-family: "Poppins-regular";
+    font-size: 20px;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.smalltitleorange {
+    color: var(--orange-default);
+    font-size: 32px;
+    font-family: "Junior";
+    font-weight: bold;
+    text-align: left;
 }
 
 /* FORMULAIRES */

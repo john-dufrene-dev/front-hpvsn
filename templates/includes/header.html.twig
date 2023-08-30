@@ -3,12 +3,12 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>	
-        <img class="logo-happyvoisin-interne d-block mx-auto mb-4 position-absolute" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/img/logo-interne.png" alt="logo happy voisin" width="149" height="169">
-        <div class="collapse navbar-collapse justify-content-center" id="main_nav">
+        <a href="/" title="Retour sur l'accueil"><img class="logo-happyvoisin-interne d-block mx-auto mb-4 position-absolute" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/img/logo-interne.png" alt="logo happy voisin" width="149" height="169"></a>
+        <div class="collapse navbar-collapse justify-content-center internal-navbar" id="main_nav">
             <ul class="navbar-nav navbar-left">
                 {# <li class="nav-item"><a class="badge nav-link" href="#"> <img class="logo-happyvoisin d-block mx-auto mb-4 position-relative" data-aos="example-anim3" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" src="/img/logo-interne.png" alt="logo happy voisin" width="149" height="169">  </a></li> #}
                 <li class="nav-item"><a class="badge nav-link" href="./"> Accueil </a></li>
-                <li class="nav-item"><a class="badge nav-link" href="#"> Papoter </a></li>
+                <li class="nav-item"><a class="badge nav-link" href="/parrainage"> Parrainage </a></li>
                 <li class="nav-item"><a class="badge nav-link" href="/annonces"> Les p'tites annonces </a></li>
                 <li class="nav-item"><a class="rounded-pill btn btn-sm spontsorship-navbar" href="/demandes"> Les demandes </a></li>
                 <li class="nav-item"><a class="badge nav-link" href="/annonces/ajouter-annonce"> Poster une annonce </a></li>
@@ -16,7 +16,7 @@
         </div> <!-- navbar-collapse.// -->
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="badge nav-link" href="#"> Ville </a></li>
+            <li class="nav-item"><a class="badge nav-link" href="/fil_actualite"> Ville </a></li>
             <li class="nav-item nav-item-inscription"><a class="btn btn-sm btn-inscription" href="{{ path('app_login') }}"> Mon compte </a></li>
         </ul>
     </div> <!-- container.// -->

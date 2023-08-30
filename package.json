@@ -1,15 +1,20 @@
 {
     "devDependencies": {
-        "@babel/core": "^7.21.4",
-        "@babel/preset-env": "^7.21.4",
-        "@babel/preset-react": "^7.18.6",
-        "@hotwired/stimulus": "^3.2.1",
+        "@babel/core": "^7.22.11",
+        "@babel/preset-env": "^7.22.10",
+        "@babel/preset-react": "^7.22.5",
+        "@hotwired/stimulus": "^3.2.2",
         "@symfony/stimulus-bridge": "^3.2.2",
+        "@symfony/stimulus-bundle": "file:vendor/symfony/stimulus-bundle/assets",
         "@symfony/ux-react": "file:vendor/symfony/ux-react/assets",
-        "@symfony/webpack-encore": "^4.3.0",
-        "core-js": "^3.30.1",
+        "@symfony/webpack-encore": "^4.4.0",
+        "@testing-library/dom": "^9.3.1",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/jest": "^29.5.4",
+        "@types/mocha": "^10.0.1",
+        "core-js": "^3.32.1",
         "regenerator-runtime": "^0.13.11",
-        "webpack": "^5.81.0",
+        "webpack": "^5.88.2",
         "webpack-cli": "^4.10.0",
         "webpack-notifier": "^1.15.0"
     },
@@ -22,16 +27,21 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@fortawesome/free-solid-svg-icons": "^6.4.2",
+        "@fortawesome/react-fontawesome": "^0.2.0",
         "aos": "3.0.0-beta.6",
         "axios": "^1.4.0",
         "copy-webpack-plugin": "^11.0.0",
-        "dotenv": "^16.0.3",
+        "dotenv": "^16.3.1",
         "file-loader": "^6.2.0",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "sass": "^1.62.1",
-        "sass-loader": "^13.2.2",
-        "ts-loader": "^9.4.2"
+        "react-dropzone": "^14.2.3",
+        "react-google-autocomplete": "^2.7.3",
+        "react-places-autocomplete": "^7.3.0",
+        "sass": "^1.66.1",
+        "sass-loader": "^13.3.2",
+        "ts-loader": "^9.4.4"
     }
 }

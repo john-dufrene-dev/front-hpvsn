@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ParrainageController!{% endblock %}
+
+{% block body %}
+	{% include 'includes/header.html.twig' %}
+    <div class="container internalContainerBig p-0">
+        <div class="internalTitle">
+            Parrainage
+        </div>
+    </div>
+
+    <div class="container-fluid sponsor-neighbors p-3">
+        <h2 class="d-flex flex-column align-items-center position-relative">
+            <span class="position-relative"> Parraine <br class="d-sm-none">tes voisins<img class="img-fluid position-absolute smile" src="/img/sourire.png" alt="tirelire" width="175" height="45"></span>
+        </h2>
+        <div class="sponsor-baseline text-center">Tu gagnes de l’argent TOUS LES MOIS avec tes filleuls et tes p’tits filleuls</div>
+        <div class="row no-gutters m-auto d-flex">
+            <div class="col-12 col-lg-5 col-xl-6 tirelire">
+                <img class="mb-2 img-fluid" src="/img/tirelire.png" alt="tirelire" width="511" height="566">
+                <div class="text-center talk-around">Parles-en autour de toi<br>et remplis ta tirelire !</div>
+                <a href="#" title="Je parraine !" class="rounded-pill px-3 btn btn-sm bg-white text-orange i-sponsor">je parraine</a>
+            </div>
+            <div class="col-12 col-lg-7 col-xl small-godchild">
+                <img class="mb-2 img-fluid" src="/img/ptits-fillots.png" alt="tirelire" width="845" height="782">
+            </div>
+        </div>
+        <img src="/img/city-cochon-blue.png" class="backcochon" width="1061" height="627" alt="fond ville parraine tes voisins">
+    </div>
+
+    <div class="container d-flex flex-column align-items-center neighbors-services">
+        <h2 class="bigtitleblue">Parraine tes voisins</h2>
+        <div class="textstandard">
+            Comment ça marche ? C’est simple, tu t’inscris sur Happy Voisin, ensuite tu peux parrainer tes amis et tes proches en te rendant dans ton espace compte ! C’est illimité.<br>
+            Pour chaque filleul qui s’inscrit tu gagnes 3€ chaque mois, pas une seule fois ! Et plus tu vas parrainer, plus tu vas gagner de l’argent chaque mois. Au bout de 3 filleuls par exemple déjà cela va rembourser ton abonnement chez Happy Voisin. Ensuite ce sera que de l’argent de poche en plus pour remplir ta tirelire. Alors soit malin, parraine au max ! 
+        </div>
+        <button type="submit" class="rounded-pill px-3 btn btn-sm bg-orange text-white big-button">Je parraine</button>
+        <div class="whySponsor">
+            <img src="/img/pourquoi-parrainer.jpg" class="img-responsive" width="1323" height="755" alt="visuel pourquoi parrainer">
+        </div>
+    </div>
+    {% include 'includes/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('@cms') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{parent()}}
+	{{ encore_entry_script_tags('@cms') }}
+{% endblock %}

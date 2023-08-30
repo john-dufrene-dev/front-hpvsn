@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SponsorshipController extends AbstractController
 {
-    #[Route('/parrainage', name: 'app_sponsorship')]
+    #[Route('/mon-compte/mon-parrainage', name: 'app_sponsorship')]
     public function index(): Response
     {
         return $this->render('account/sponsorship/index.html.twig', []);

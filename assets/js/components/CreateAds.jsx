@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MessageApiClient } from '@@js/api/message';
+import Dropzone from 'react-dropzone';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudUploadAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Autocomplete from "react-google-autocomplete";
 
 const message = new MessageApiClient();
 
@@ -8,19 +12,36 @@ export default function CreateAds(props) {
     const [alert, setAlert] = useState({ status: false, class: '' });
     const user = JSON.parse(props.user);
     const company_url = `/api/companies/${process.env.X_AUTH_IDENTIFIER}`;
+    const MaxSize = 10048576; // 10MB in bytes
+    const acceptedFileTypes = ['image/jpeg'];
+    const [btnType, setBtnType] = useState('Objet');
+    const [objectIn, setObjectIn] = useState('Vente');
+    const [services, setServices] = useState('Bénévolat');
+
+    const initMap = () => {
+        // Code pour initialiser la carte Google Maps ici
+        const map = new window.google.maps.Map(document.getElementById('google-map'), {
+            center: { lat: 43.712228, lng: 7.1251804 },
+            zoom: 12
+        });
+
+        // Ajoutez des marqueurs, des informations de fenêtre d'info, etc. selon vos besoins
+    };
 
     useEffect(() => {
         if (props.user !== 'null') {
             setEmail(user.token)
         }
-    }, []);
 
-    const [btntype, setBtnType] = useState('Objet');
-    const [objectIn, setObjectIn] = useState('Prêt');
-    const [services, setServices] = useState('Bénévolat');
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAmMm3tzEL2ScIbGlS-XgFtbJECQWQqP8s&libraries=places`;
+        script.async = true;
+        script.onload = initMap; // Appeler la fonction initMap une fois que l'API est chargée
+        document.body.appendChild(script);
+    }, []);
   
-    const handleBtnTypeChange = (event) => {
-      setBtnType(event.target.value);
+    const handlebtnTypeChange = (event) => {
+        setBtnType(event.target.value);
     };
   
     const handleObjectInChange = (event) => {
@@ -41,6 +62,9 @@ export default function CreateAds(props) {
             ads_category: formObject.ads_category,
             ads_btntype: formObject.ads_btntype,
             ads_objectin: formObject.ads_objectin,
+            ads_services: formObject.ads_services,
+            ads_description: formObject.ads_description,
+            ads_prix: formObject.ads_prix,
             pseudo: formObject.pseudo,
             auth_email: formObject.auth_email,
             auth_password: formObject.auth_password,
@@ -63,6 +87,28 @@ export default function CreateAds(props) {
                 }
             })
     }
+    const [uploadedFiles, setUploadedFiles] = useState([]);
+
+    const handleDrop = (acceptedFiles) => {
+        const newFiles = acceptedFiles.map(file => ({
+            file,
+            preview: URL.createObjectURL(file) // Create a preview URL for the image
+        }));
+    
+        if (newFiles.some(file => file.file.size > MaxSize)) {
+            // Handle file size error here
+            console.log('File size exceeded');
+            return;
+        }
+    
+        setUploadedFiles([...uploadedFiles, ...newFiles]);
+    };
+
+    const removeFile = (fileIndex) => {
+        const updatedFiles = uploadedFiles.filter((file, index) => index !== fileIndex);
+        setUploadedFiles(updatedFiles);
+    };
+    
 
     return (
         <>
@@ -74,7 +120,7 @@ export default function CreateAds(props) {
             <div className="container-form">
             <form onSubmit={formSubmit}>
                 <div className="form-group">
-                    <label htmlFor="ads_title" className="form-label">Commençons par l'essentiel !</label>
+                    <label htmlFor="ads_title" className="form-label bigLabel">Commençons par l'essentiel !</label>
                     <input type="text" id="ads_title" name="ads_title" className="form-control" defaultValue="" placeholder="Quel est le titre de l'annonce ?*" />
                 </div>
                 <div className="form-group">
@@ -85,18 +131,18 @@ export default function CreateAds(props) {
                         <option defaultValue="3">Three</option>
                     </select>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="ads_btntype" className="form-label">Type : </label>
+                <div className="form-group formMb40">
+                    <label htmlFor="ads_btntype1" className="form-label labelRadio">Type* : </label>
                     <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" className="btn-check" name="ads_btntype" id="ads_btntype1" autoComplete="off" defaultValue="Objet" checked={btntype === 'Objet'} onChange={handleBtnTypeChange} />
-                        <label className="btn btn-outline-primary" htmlFor="btntype1">Objet</label>
+                        <input type="radio" className="btn-check" name="ads_btntype" id="ads_btntype1" autoComplete="off" defaultValue="Objet" checked={btnType === 'Objet'} onChange={handlebtnTypeChange} />
+                        <label className="btn btn-outline-primary" htmlFor="ads_btntype1">Objet</label>
 
-                        <input type="radio" className="btn-check" name="ads_btntype" id="ads_btntype2" autoComplete="off" defaultValue="Services" checked={btntype === 'Services'} onChange={handleBtnTypeChange} />
-                        <label className="btn btn-outline-primary" htmlFor="btntype2">Services</label>
+                        <input type="radio" className="btn-check" name="ads_btntype" id="ads_btntype2" autoComplete="off" defaultValue="Services" checked={btnType === 'Services'} onChange={handlebtnTypeChange} />
+                        <label className="btn btn-outline-primary" htmlFor="ads_btntype2">Services</label>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="ads_objectin1" className="form-label">Objet en : </label>
+                <div className="form-group formMb40">
+                    <label htmlFor="ads_objectin1" className="form-label labelRadio">Objet en* : </label>
                     <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" className="btn-check" name="ads_objectin" id="ads_objectin1" autoComplete="off" defaultValue="Prêt" checked={objectIn === 'Prêt'} onChange={handleObjectInChange} />
                         <label className="btn btn-outline-primary" htmlFor="ads_objectin1">Prêt</label>
@@ -111,22 +157,60 @@ export default function CreateAds(props) {
                         <label className="btn btn-outline-primary" htmlFor="ads_objectin4">Don</label>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="ads_services1" className="form-label" aria-label="Disabled" disabled>Services : </label>
+                <div className="form-group formMb70">
+                    <label htmlFor="ads_services1" className="form-label labelRadioGrey" aria-label="Disabled" disabled>Services : </label>
                     <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" className="btn-check" name="ads_services" id="ads_services1" autoComplete="off" defaultValue="Bénévolat" checked={services === 'Bénévolat'} onChange={handleServicesChange} aria-label="Disabled" disabled />
+                        <input type="radio" className="btn-check" name="ads_services" id="ads_services1" autoComplete="off" defaultValue="Bénévolat" onChange={handleServicesChange} aria-label="Disabled" disabled />
                         <label className="btn btn-outline-primary" htmlFor="ads_services1">Bénévolat</label>
 
-                        <input type="radio" className="btn-check" name="ads_services" id="ads_services" autoComplete="off" defaultValue="Rémunéré" checked={services === 'Rémunéré'} onChange={handleServicesChange} aria-label="Disabled" disabled />
+                        <input type="radio" className="btn-check" name="ads_services" id="ads_services" autoComplete="off" defaultValue="Rémunéré" onChange={handleServicesChange} aria-label="Disabled" disabled />
                         <label className="btn btn-outline-primary" htmlFor="ads_services2">Rémunéré</label>
 
-                        <input type="radio" className="btn-check" name="ads_services" id="ads_services3" autoComplete="off" defaultValue="Sur devis" checked={services === 'Sur devis'} onChange={handleServicesChange} aria-label="Disabled" disabled />
+                        <input type="radio" className="btn-check" name="ads_services" id="ads_services3" autoComplete="off" defaultValue="Sur devis" onChange={handleServicesChange} aria-label="Disabled" disabled />
                         <label className="btn btn-outline-primary" htmlFor="ads_services3">Sur devis</label>
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="ads_description" className="form-label">Description de l'annonce</label>
+                    <label htmlFor="ads_description" className="form-label bigLabel">Description de l'annonce*</label><br></br>
+                    <span className="adsInfos">Plus il y a de détails, plus votre annonce sera de qualité.</span>
                     <textarea className="form-control" id="ads_description" rows="3" defaultValue="" placeholder="Description*"></textarea>
+                    <span className="adsInfos">0 / 4000 caractères</span>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="ads_price" className="form-label bigLabel">Quel est ton prix ?</label>
+                    <input type="text" id="ads_price" name="ads_price" className="form-control" defaultValue="" placeholder="Prix*" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="ads_price" className="form-label bigLabel">Photos de l'annonce</label>
+                    <Dropzone onDrop={handleDrop} accept={acceptedFileTypes} multiple>
+                        {({ getRootProps, getInputProps }) => (
+                            <div className="dropzone" {...getRootProps()}>
+                                <input {...getInputProps()} />
+                                <div className="dropzone-inner">
+                                    <FontAwesomeIcon icon={faCloudUploadAlt} className="upload-icon" />
+                                    <p>Ajouter des photos</p>
+                                </div>
+                            </div>
+                        )}
+                    </Dropzone>
+                    <div className="preview-container">
+                        {uploadedFiles.map((file, index) => (
+                            <div className="file-preview" key={index}>
+                                <img src={file.preview} alt={`Preview ${index}`} />
+                                <button className="remove-button" onClick={() => removeFile(index)}><FontAwesomeIcon icon={faTrashAlt} className="upload-icon" /></button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="ads_locate" className="form-label bigLabel">Localisation</label>
+                    <Autocomplete
+                    apiKey="AIzaSyAmMm3tzEL2ScIbGlS-XgFtbJECQWQqP8s"
+                    onPlaceSelected={(place) => {
+                        console.log(place);
+                    }}
+                    />
+                    <div id="google-map" className="google-map"></div>
                 </div>
                 <hr></hr>
                 <div className="form-group">

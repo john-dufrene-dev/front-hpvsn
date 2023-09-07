@@ -1,10 +1,11 @@
 const Encore = require('@symfony/webpack-encore');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const webpack = require('webpack');
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 // const CopyPlugin = require('copy-webpack-plugin');
 
-dotenv.config({ path: '.env.local' });
+// dotenv.config({ path: '.env.local' });
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -43,13 +44,13 @@ Encore
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
 
-    .addPlugin(
-        new webpack.DefinePlugin({
-            'process.env.ADMIN_URL': JSON.stringify(process.env.ADMIN_URL),
-            'process.env.X_AUTH_TOKEN': JSON.stringify(process.env.X_AUTH_TOKEN),
-            'process.env.X_AUTH_IDENTIFIER': JSON.stringify(process.env.X_AUTH_IDENTIFIER),
-        }),
-    )
+    // .addPlugin(
+    //     new webpack.DefinePlugin({
+    //         'process.env.ADMIN_URL': JSON.stringify(process.env.ADMIN_URL),
+    //         'process.env.X_AUTH_TOKEN': JSON.stringify(process.env.X_AUTH_TOKEN),
+    //         'process.env.X_AUTH_IDENTIFIER': JSON.stringify(process.env.X_AUTH_IDENTIFIER),
+    //     }),
+    // )
 
     // Set the path the files are copied to
     // .copyFiles({
@@ -68,6 +69,8 @@ Encore
     //         }],
     //     })
     // )
+
+    .addPlugin(new Dotenv({ path: './.env.local', systemvars: true }))
 
     /*
      * FEATURE CONFIG

@@ -377,3 +377,22 @@ a {
         }
     }
 }
+
+@media (max-width:767px) {
+    .internalTitle {
+        font-size: 40px;
+        margin:20px;
+    }
+    .form-group {
+        .form-control {
+            font-size: 14px;
+            height: 69px;
+        }
+    }
+    .btn-group, .btn-group-vertical {
+        display:flex;
+    }
+    ::placeholder {
+        font-size: 16px !important;
+    }
+}

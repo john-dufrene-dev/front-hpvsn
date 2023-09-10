@@ -5,9 +5,9 @@
 {% block body %}
 	{% include 'includes/header.html.twig' %}
     <div class="container internalContainerBig p-0">
-        <div class="internalTitle">
+        <h1 class="internalTitle">
             Les services
-        </div>
+        </h1>
     </div>
     <div class="container-fluid p-0 cms-services">
         <div class="container d-flex flex-column align-items-center neighbors-services">
@@ -17,50 +17,49 @@
 
     <div class="container-fluid p-0">
 
-
-        <div id="carouselHow" class="container how-it-work carousel slide carousel-slide" data-ride="carousel" data-interval="false">
+        <div id="carouselHow" class="container how-it-work carousel slide carousel-slide" data-ride="carousel" data-interval="false" data-bs-ride="carousel">
             <h2 class="text-center"> Comment <br class="d-md-none">ça marche ?</h2>
             <!-- Indicateurs -->
             <ul class="carousel-indicators">
-                <li data-target="#carouselHow" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselHow" data-slide-to="1"></li>
-                <li data-target="#carouselHow" data-slide-to="2"></li>
+                <button type="button" data-bs-target="#carouselHow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselHow" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselHow" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </ul>
 
             <!-- Carrousel -->
             <div class="how-bloc mb-3 text-center carousel-inner">
-            <div class="carouselitem1 how carousel-item active" data-interval="5000">
+            <div class="carouselitem1 how carousel-item active" data-bs-interval="5000">
                 <div class="how-body">
-                    <img src="/img/comment-1.png" alt="tablette tactile" width="335" height="303" class="img-fluid">
-                    <h3 class="m-auto">Rejoins toi aussi<br>ton quartier</h3>
-                    <h4 class="position-relative">9<small class="position-absolute">€99/mois</small><span class="no-engagment">sans engagment</span></h4>
+                    <img src="/img/services-laptop.png" alt="tablette tactile" width="335" height="303" class="img-fluid">
+                    <h3 class="m-auto">LES PETITES ANNONCES DANS<br> MON QUARTIER</h3>
+                    <a href="#" class="rounded-pill px-3 btn btn-sm bg-orange text-white">Je cherche</a>
                 </div>
             </div>
-            <div class="carouselitem2 how carousel-item" data-interval="5000">
+            <div class="carouselitem2 how carousel-item" data-bs-interval="5000">
                 <div class="how-body">
-                    <img src="/img/comment-2.png" alt="tablette tactile" width="336" height="303" class="img-fluid">
-                    <h3 class="m-auto">Consulte les services<br>ou discute avec tes voisins</h3>
-                    <h4 class="upper">Tout est inclus !</h4>
+                    <img src="/img/services-coucou.png" alt="tablette tactile" width="336" height="303" class="img-fluid">
+                    <h3 class="m-auto">LES DEMANDES<br>DE MES VOISINS</h3>
+                    <a href="#" class="rounded-pill px-3 btn btn-sm bg-orange text-white">Je consulte</a>
                 </div>
             </div>
-            <div class="carouselitem3 how carousel-item" data-interval="5000">
+            <div class="carouselitem3 how carousel-item" data-bs-interval="5000">
                 <div class="how-body">
-                    <img src="/img/comment-3.png" alt="bulle et argent" width="326" height="303" class="img-fluid">
-                    <h3 class="m-auto">Parraine et gagne de<br>l’argent tous les mois</h3>
-                    <h4 class="upper">Arrondis tes fins de mois</h4>
+                    <img src="/img/services-cochon.png" alt="bulle et argent" width="326" height="303" class="img-fluid">
+                    <h3 class="m-auto">PARRAINE ET GAGNE DE<br>L'ARGENT TOUS LES MOIS</h3>
+                    <a href="#" class="rounded-pill px-3 btn btn-sm bg-orange text-white">En savoir +</a>
                 </div>
             </div>
             </div>
         
             <!-- Contrôles -->
-            <a class="carousel-control-prev" href="#carouselHow" role="button" data-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHow" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Précédent</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselHow" role="button" data-slide="next">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHow" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Suivant</span>
-            </a>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
     {% include 'includes/footer.html.twig' %}

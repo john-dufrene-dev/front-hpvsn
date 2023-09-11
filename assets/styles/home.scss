@@ -23,8 +23,6 @@ header {
                 background:url(/assets/img/bigmac.png) no-repeat center;
             }
         }
-        .navbar-left {
-        }
         .navbar-nav {
             flex-direction: row;
             align-items: stretch;
@@ -88,12 +86,6 @@ header {
         
     }
 }
-@media (max-width:991px) {
-    .navbar .container-fluid #main_nav .navbar-nav {
-        flex-direction: column !important;
-        align-items: center;
-    }
-}
 @media (min-width:992px) {
     .navbar {
         position: fixed;
@@ -138,8 +130,6 @@ header {
                 vertical-align: middle;
             }
             .nav-item {
-                .spontsorship-navbar {
-                }
                 .services-navbar {
                     line-height: 16px;
                     padding: 4px 16px;
@@ -182,7 +172,6 @@ header {
                     }
                 }
             }
-            
         }
     }
     .scrolled {
@@ -193,23 +182,9 @@ header {
     .navbar {
         .container-fluid {
             padding: 19px 0px 0px;
-            .navbar-left {
-                margin-top: -19px;
-            }
-            .navbar-nav {
-                &.ml-auto {
-                }
-            }
-            a {
-                line-height: 26px;
-            }
             .nav-item {
-                .spontsorship-navbar {
-                }
                 .services-navbar {
                     line-height: 26px;
-                }
-                .nav-link {
                 }
                 &.nav-item-inscription {
                     .btn-inscription {
@@ -426,8 +401,6 @@ header {
             width: 19%;
             max-width: unset;
         }
-        .fond-header {
-        }
         .voisines {
             width: 219px;
             min-height: 297px;
@@ -436,24 +409,10 @@ header {
                 width: 170px;
             }
         }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1100px) {
     header {
-        .logo-happyvoisin {
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
-        }
         .voisines {
             width: 269px;
             min-height: 357px;
@@ -462,24 +421,12 @@ header {
                 left: 30px;
             }
         }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1200px) {
     header {
         .logo-happyvoisin {
             width: 196px;
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
         }
         .voisines {
             width: 279px;
@@ -489,30 +436,12 @@ header {
                 left: 30px;
             }
         }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1280px) {
     header {
         .logo-happyvoisin {
             width: 215px;
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
-        }
-        .voisines {
-            .bulle-voisines {
-            }
-        }
-        .masque-header {
         }
     }
 }
@@ -521,38 +450,10 @@ header {
         .logo-happyvoisin {
             width: 235px;
         }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
-        }
-        .voisines {
-            .bulle-voisines {
-            }
-        }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1440px) {
     header {
-        .logo-happyvoisin {
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
-        }
         .voisines {
             width: 329px;
             min-height: 447px;
@@ -560,8 +461,6 @@ header {
                 width: 220px;
                 left: 39px;
             }
-        }
-        .masque-header {
         }
     }
 }
@@ -584,10 +483,6 @@ header {
                 font-size: 11px;
             }
         }
-        .smartphone {
-        }
-        .fond-header {
-        }
         .voisines {
             width: 329px;
             min-height: 427px;
@@ -597,24 +492,10 @@ header {
                 left: -10px;
             }
         }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1700px) {
     header {
-        .logo-happyvoisin {
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
-        .smartphone {
-        }
-        .fond-header {
-        }
         .voisines {
             width: 409px;
             .bulle-voisines {
@@ -622,34 +503,20 @@ header {
                 width: 349px;
             }
         }
-        .masque-header {
-        }
     }
 }
 @media (min-width:1800px) {
     header {
-        .logo-happyvoisin {
-        }
-        .cartouche-essai {
-            a {
-            }
-            .sans-engagement {
-            }
-        }
         .smartphone {
             bottom:90px;
             width: 30%;
             max-width: 366px;
-        }
-        .fond-header {
         }
         .voisines {
             .bulle-voisines {
                 top: -310px;
                 left: -20px;
             }
-        }
-        .masque-header {
         }
     }
 }
@@ -707,45 +574,15 @@ header {
 }
 @media (max-width:991px) {
     .bloc-title-home {
-        .title-home {
-        }
         .baseline-home {
             margin: auto;
             margin-top: 8px;
-        }
-        form {
-            .input-search-home {
-            }
-            .input-group-append {
-                button {
-                }
-            }
-        }
-    }
-}
-@media (min-width:768px) {
-    .bloc-title-home {
-        .title-home {
-        }
-        .baseline-home {
-        }
-        form {
-            .input-search-home {
-            }
-            .input-group-append {
-                button {
-                }
-            }
         }
     }
 }
 @media (min-width:992px) {
     .bloc-title-home {
         top: 225px;
-        .title-home {
-        }
-        .baseline-home {
-        }
         form {
             width: 350px;
             margin: auto;
@@ -802,18 +639,6 @@ header {
 @media (min-width:1280px) {
     .bloc-title-home {
         top: 275px;
-        .title-home {
-        }
-        .baseline-home {
-        }
-        form {
-            .input-search-home {
-            }
-            .input-group-append {
-                button {
-                }
-            }
-        }
     }
 }
 @media (min-width:1400px) {
@@ -830,30 +655,12 @@ header {
         }
         form {
             width: 580px;
-            .input-search-home {
-            }
-            .input-group-append {
-                button {
-                }
-            }
         }
     }
 }
 @media (min-width:1530px) {
     .bloc-title-home {
         top: 315px;
-        .title-home {
-        }
-        .baseline-home {
-        }
-        form {
-            .input-search-home {
-            }
-            .input-group-append {
-                button {
-                }
-            }
-        }
     }
 }
 @media (min-width:1730px) {
@@ -893,14 +700,8 @@ header {
 }
 @media (min-width:1900px) {
     .bloc-title-home {
-        .title-home {
-        }
-        .baseline-home {
-        }
         form {
             width: 943px;
-            .input-search-home {
-            }
             .input-group-append {
                 width: 298px;
                 button {
@@ -984,8 +785,6 @@ header {
             display: none;
         }
         .how-bloc {
-            &.carousel-inner {
-            }
             .how {
                 .how-body {
                     img {
@@ -1005,8 +804,6 @@ header {
                             font-size: 9.23px;
                             margin-left: 4px;
                             top: -5px;
-                        }
-                        &.upper {
                         }
                     } 
                 }
@@ -1033,20 +830,12 @@ header {
     .how-it-work {
         width: 100%;
         max-width: none;
-        h2 {
-        }
         .how-bloc {
-            &.carousel-inner {
-            }
             .how {
                 width: 32.9% !important;
                 padding: 15px;
                 display: inline-block;
                 vertical-align: top;
-                &:first-child {
-                }
-                &:last-child {
-                }
                 .how-body {
                     img {
                         max-height: none;
@@ -1054,14 +843,6 @@ header {
                     h3 {
                         font-size: 18.78px;
                     }
-                    h4 {
-                        small {
-                        }
-                        span {
-                        }
-                        &.upper {
-                        }
-                    } 
                 }
             }
             .carouselitem2 {
@@ -1088,8 +869,6 @@ header {
 @media (min-width:992px) {
     .how-it-work {
         width: 100%;
-        h2 {
-        }
         .how-bloc {
             display: flex;
             flex-flow: row wrap;
@@ -1151,39 +930,11 @@ header {
 }
 @media (min-width:1100px) {
     .how-it-work {
-        h2 {
-        }
         .how-bloc {
-            &.carousel-inner {
-            }
-            .how {
-                &:first-child {
-                }
-                &:last-child {
-                }
-                .how-body {
-                    img {
-                    }
-                    h3 {
-                    }
-                    h4 {
-                        small {
-                        }
-                        span {
-                        }
-                        &.upper {
-                        }
-                    } 
-                }
-            }
             .carouselitem3 {
                 .how-body {
                     img {
                         margin-top: 0px;
-                    }
-                    h4 {
-                        &.upper {
-                        }
                     }
                 }
             }
@@ -1193,8 +944,6 @@ header {
 @media (min-width:1530px) {
     .how-it-work {
         width: 1230px;
-        h2 {
-        }
         .how-bloc {
             display: flex;
             flex-flow: row wrap;
@@ -1249,32 +998,6 @@ header {
 @media (min-width:1900px) {
     .how-it-work {
         width: 1560px;
-        h2 {
-        }
-        .how-bloc {
-            &.carousel-inner {
-            }
-            .how {
-                &:first-child {
-                }
-                &:last-child {
-                }
-                .how-body {
-                    img {
-                    }
-                    h3 {
-                    }
-                    h4 {
-                        small {
-                        }
-                        span {
-                        }
-                        &.upper {
-                        }
-                    } 
-                }
-            }
-        }
     }  
 }
 
@@ -1535,16 +1258,10 @@ header {
             margin-left: unset;
             transform: unset;
         }
-        .title-neighbors-services {
-        }
-        .all-services {
-        }
     }
 }
 @media (min-width: 992px) {
     .neighbors-services {
-        img {
-        }
         .title-neighbors-services {
             font-size: 56px;
             line-height: 56px;

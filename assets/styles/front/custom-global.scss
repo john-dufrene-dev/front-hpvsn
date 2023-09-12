@@ -103,7 +103,36 @@ a {
         }
     }
 }
-
+@media (max-width:1265px) and (min-width:992px) {
+    .navbar {
+        height: auto;
+        .container-fluid {
+            .nav-item {
+                a{
+                    font-size: 11px;
+                    &.nav-link {
+                        padding: 4px 12px;
+                        line-height: 16px;
+                    }
+                }
+                &.nav-item-inscription {
+                    .btn-inscription {
+                        height: 74px;
+                        line-height: 74px;
+                        padding-top: 4px;
+                        padding-left: 20px;
+                        padding-right: 60px;
+                        &::after {
+                            margin-left: 20px;
+                            right: 9px;
+                            top: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 /* INTERNAL PAGES */
 .internalTitle {
     font-family:"Junior";

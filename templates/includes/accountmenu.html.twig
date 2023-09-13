@@ -1,11 +1,14 @@
 <div class="menu-left">
     <ul class="menu-list">
-        <li><a href="./" class="{% if app.request.attributes.get('_route') == 'app_actuality_feed' %}active{% endif %}">Accueil</a></li>
-        <li><a href="/annonces"> Rechercher</a></li>
-        <li><a href="/annonces/ajouter-annonce"> Poster une annonce</a></li>
-        <li><a href="/demandes"> Les demandes</a></li>
-        <li><a href="/parrainage"> Parrainage</a></li>
-        <li><a href="/annonces">Les p'tites annonces</a></li>
-        <li><a href="#">Papoter</a></li>
+        <li><a href="/fil_actualite" class="{% if app.request.attributes.get('_route') == 'app_actuality_feed' %}active{% endif %}"> Hello Sarah</a></li>
+        <li><a href="/mon-compte/mon-profil" class="{% if app.request.attributes.get('_route') == 'app_profil' %}active{% endif %}"> Mon profil</a></li>
+        <li><a href="/annonces" class="{% if app.request.attributes.get('_route') == 'app_ads' %}active{% endif %}"> Rechercher</a></li>
+        <li><a href="/annonces/ajouter-annonce" class="{% if app.request.attributes.get('_route') == 'app_ads_add' %}active{% endif %}"> Poster une annonce</a></li>
+        <li><a href="/mon-compte/mes-annonces" class="{% if app.request.attributes.get('_route') == 'app_my_ads' %}active{% endif %}"> Mes annonces</a></li>
+        <li><a href="/mon-compte/mes-demandes" class="{% if app.request.attributes.get('_route') == 'app_my_requests' %}active{% endif %}"> Mes demandes</a></li>
+        <li><a href="/mon-compte/mon-parrainage" class="{% if app.request.attributes.get('_route') == 'app_sponsorship' %}active{% endif %}"> Parrainage</a></li>
+        <li><a href="/mon-compte/mon-reseau" class="{% if app.request.attributes.get('_route') == 'app_my_network' %}active{% endif %}"> Mon réseau</a></li>
+        <li><a href="/mon-compte/mon-abonnement" class="{% if app.request.attributes.get('_route') == 'app_amy_plan' %}active{% endif %}"> Mon abonnement</a></li>
+        <li><a href="/logout" class="{% if app.request.attributes.get('_route') == 'app_logout' %}active{% endif %}"> Me déconnecter</a></li>  
     </ul>
 </div>

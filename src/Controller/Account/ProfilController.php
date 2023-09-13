@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[IsGranted('ROLE_USER')]
 class ProfilController extends AbstractController
 {
-    #[Route('/profil', name: 'app_profil')]
+    #[Route('/mon-compte/mon-profil', name: 'app_profil')]
     public function profil(): Response
     {
         if (!$this->getUser()) {

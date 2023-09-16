@@ -1,6 +1,6 @@
 /* HEADER */
 .header-top {
-    height: 220px !important;
+    height: auto !important;
     /* femme dans son fauteuil */
     .femme-fauteuil {
         top: 70px;
@@ -12,11 +12,20 @@
     /* Fond header */
     .fond-header {
         width: 100%;
+        display: none;
+        &.fond-header-tab {
+            display: block;
+        }
     }
 }
 @media (min-width:992px) {
     .header-top {
-        height: auto !important;
+        .fond-header {
+            display: block;
+            &.fond-header-tab {
+                display: none !important;
+            }
+        }
     }
 }
 @media (min-width:1520px) {
@@ -181,7 +190,7 @@
                 background:  var(--greenblue-darken);
                 color: white;
                 z-index:3;
-                height: 44px;
+                height: 45px;
                 width: 100%;
                 padding: 0px !important;
                 font-size: 12.6px;
@@ -195,7 +204,74 @@
         }
     }
 }
-@media (min-width:992px) {
+@media (max-width:645px) {
+    .bloc-title-home {
+        z-index:3;
+        left:0px;
+        right:0px;
+        top: 30px;
+        height:auto;
+        form {
+            display: block !important;
+            width: 100%;
+            max-width: 80%;
+            height: 45px;
+            margin: auto;
+            position: relative;
+            .search-box {
+                display: block !important;
+                flex-wrap: unset !important;
+                .dropdown {
+                    display: none;
+                }
+            }
+            .input-search-home {
+                display: inline-block;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 0px;
+                height: 45px;
+                border-radius: 30px !important;
+                &::placeholder {
+                    font-size: 12px !important;
+                }
+            }
+            .input-group-append {
+                right: 0px;
+                width: 80px;
+                top: 0px;
+                bottom: unset;
+                left: unset;
+                transform: unset;
+                button {
+                    font-size: 10px;
+                }
+            }
+            .link-post-announces {
+                a {
+                    margin-top: 10px;
+                    margin-left: 0px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .header-top {
+        height: 200px !important;
+        margin-bottom: 30px;
+        .fond-header {
+            display: none !important;
+        }
+        .femme-fauteuil {
+            top: 35px;
+            left: 20px;
+            img {
+                max-width: 90px;
+            }
+        } 
+    }
+}
+@media (min-width:646px) {
     .bloc-title-home {
         top: 55px;
         height:auto;
@@ -244,6 +320,30 @@
                     width: 147px;
                     font-size: 10.6px;
                 }
+            }
+        }
+    }
+}
+@media (max-width:991px) {
+    .bloc-title-home {
+        top: 35px;
+        .title-home {
+            font-size: 40px;
+        }
+        form {
+            .link-post-announces {
+                a {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+    .header-top {
+        .femme-fauteuil {
+            top: 20px;
+            left: 30px;
+            img {
+                max-width: 110px;
             }
         }
     }
@@ -437,6 +537,24 @@
                         border-color: #ef7630;
                         color: #FFF;
                     }
+                }
+            }
+        }
+    }
+}
+@media (min-width:992px) {
+    .head-list-announce {
+        flex-direction: row !important;
+        display: flex !important;
+    }
+    .ban-announce-filter {
+        flex-direction: row !important;
+        display: flex !important;
+        .form-group {
+            &.p-2 {
+                .justify-content-center {
+                    flex-direction: row !important;
+                    display: flex !important;
                 }
             }
         }

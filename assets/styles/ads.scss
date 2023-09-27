@@ -14,7 +14,23 @@
         width: 100%;
         display: none;
         &.fond-header-tab {
+            display: none;
+        }
+        &.fond-header-mob {
             display: block;
+        }
+    }
+}
+@media (min-width:584px) {
+    .header-top {
+        .fond-header {
+            display: none;
+            &.fond-header-tab {
+                display: block !important;
+            }
+            &.fond-header-mob {
+                display: none !important;
+            }
         }
     }
 }
@@ -23,6 +39,9 @@
         .fond-header {
             display: block;
             &.fond-header-tab {
+                display: none !important;
+            }
+            &.fond-header-mob {
                 display: none !important;
             }
         }
@@ -186,6 +205,7 @@
             bottom: -66px;
             left: 50%;
             transform: translate(-50%);
+            z-index: 10;
             button {
                 background:  var(--greenblue-darken);
                 color: white;
@@ -257,11 +277,7 @@
         }
     }
     .header-top {
-        height: 200px !important;
         margin-bottom: 30px;
-        .fond-header {
-            display: none !important;
-        }
         .femme-fauteuil {
             top: 35px;
             left: 20px;
